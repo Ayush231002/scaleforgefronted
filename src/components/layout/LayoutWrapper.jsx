@@ -9,9 +9,9 @@ export default function LayoutWrapper({ children, showHeader = true }) {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#050b1e] via-[#0b1d3a] to-[#020617]">
+    <div className="min-h-screen bg-linear-to-br from-[#050b1e] via-[#0b1d3a] to-[#020617]">
       {showHeader && <PublicHeader />}
-      <main className="flex-grow">
+      <main className="grow">
         {children}
       </main>
       <Footer />

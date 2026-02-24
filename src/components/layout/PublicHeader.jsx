@@ -128,8 +128,8 @@ export default function PublicHeader() {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-0">
-              <div className="w-30 h-30 flex items-center justify-center">
-                <img src="/scaleForgeLogo1.png" alt="ScaleForge" className="w-auto h-auto object-cover" />
+              <div className="w-50 h-50 flex items-center justify-center">
+                <img src="/Logo_Elvora_Global-removebg-preview.png" alt="ScaleForge" className="w-auto h-auto object-cover" />
               </div>
               {/* <span className="text-2xl font-bold text-white tracking-wide">
             Scale<span className="text-orange-500">Forge</span>

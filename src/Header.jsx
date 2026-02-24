@@ -7,7 +7,7 @@ export default function Header() {
 
         {/* LOGO */}
         <div className="flex items-center gap-3">
-          <img src="/header_logo.png" alt="ScaleForge Logo" className="h-16 w-auto" />
+          <img src="/Logo_Elvora_Global.png" alt="ScaleForge Logo" className="h-16 w-auto" />
           <span className="text-2xl font-bold text-white tracking-wide">
             Scale<span className="text-orange-500">Forge</span>
           </span>
