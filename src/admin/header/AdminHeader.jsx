@@ -121,7 +121,7 @@ export default function AdminHeader() {
                   <img src="/header_logo.png" alt="ScaleForge" className="w-full h-full object-contain" />
                 </div>
                 <h1 className="text-xl font-bold text-white">
-                  Scale<span className="text-orange-500">Forge</span>
+                  Elvora<span className="text-[#00B3C6]">Global</span>
                 </h1>
               </Link>
             </div>

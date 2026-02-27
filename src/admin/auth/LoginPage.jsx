@@ -58,7 +58,7 @@ export default function LoginPage() {
           <div className="flex items-center gap-3 mb-4">
             <h2 className="text-4xl font-extrabold text-white leading-tight">
           Engineering cloud platforms <br />
-          that <span className="text-orange-500">scale</span>
+          that <span className="text-[#00B3C6]">scale</span>
         </h2>
   
   
@@ -81,7 +81,7 @@ export default function LoginPage() {
           "Cost-efficient solutions",
           ].map((text, i) => (
         <div key={i} className="flex items-start gap-3">
-        <span className="mt-2 h-2 w-2 rounded-full bg-orange-500"></span>
+        <span className="mt-2 h-2 w-2 rounded-full bg-[#00B3C6]"></span>
         <span className="text-gray-300">{text}</span>
         </div>
         ))}
@@ -129,7 +129,7 @@ export default function LoginPage() {
               </label>
               <Link
                 to="/admin/forgot-password"
-                className="text-orange-400 hover:underline"
+                className="text-[#00B3C6] hover:underline"
               >
                 Forgot password?
               </Link>
@@ -137,7 +137,7 @@ export default function LoginPage() {
 
             <button
               type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition"
+              className="w-full bg-[#00B3C6] hover:bg-[#00B3C6] text-white py-3 rounded-lg font-semibold transition"
             >
               {isLoading ? "Signing in..." : "Sign In"}
             </button>
@@ -149,7 +149,7 @@ export default function LoginPage() {
                   Don't have an account?{" "}
                   <Link
                     to="/admin/register"
-                    className="text-orange-400 hover:underline font-medium"
+                    className="text-[#00B3C6] hover:underline font-medium"
                   >
                     Sign Up
                   </Link>

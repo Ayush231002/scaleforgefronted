@@ -65,14 +65,14 @@ export default function ForgotPasswordPage() {
           <div className="max-w-md">
             {/* Logo */}
             <div className="mb-8">
-              <h1 className="text-4xl font-bold text-white mb-2">ScaleForge</h1>
-              <p className="text-orange-400 text-lg">Engineering Cloud Platforms</p>
+              <h1 className="text-4xl font-bold text-white mb-2">ElvoraGloabal</h1>
+              <p className="text-[#00B3C6] text-lg">Engineering Cloud Platforms</p>
             </div>
 
             {/* Company Info */}
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-white leading-tight">
-                Password <span className="text-orange-500">recovery</span> made simple
+                Password <span className="text-[#00B3C6]">recovery</span> made simple
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed">
                 We've got you covered. If you're having trouble accessing your account, we'll help you get back in quickly and securely.
@@ -82,15 +82,15 @@ export default function ForgotPasswordPage() {
             {/* Support Info */}
             <div className="mt-12 space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-[#00B3C6] rounded-full"></div>
                 <span className="text-gray-300">Instant email delivery</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-[#00B3C6] rounded-full"></div>
                 <span className="text-gray-300">Secure reset links</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-[#00B3C6] rounded-full"></div>
                 <span className="text-gray-300">24/7 support available</span>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function ForgotPasswordPage() {
               
               <p className="text-gray-300 mb-6">
                 We've sent a password reset link to<br />
-                <span className="text-orange-400 font-medium">{email}</span>
+                <span className="text-[#00B3C6] font-medium">{email}</span>
               </p>
 
               <div className="bg-blue-500/20 border border-blue-500/50 rounded-lg p-4 mb-6">
@@ -136,7 +136,7 @@ export default function ForgotPasswordPage() {
               <div className="space-y-3">
                 <button
                   onClick={() => setIsSubmitted(false)}
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full bg-[#00B3C6] hover:bg-[#00B3C6] text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   Try Another Email
                 </button>
@@ -162,14 +162,14 @@ export default function ForgotPasswordPage() {
         <div className="max-w-md">
           {/* Logo */}
           <div className="mb-8">
-            <h1 className="text-4xl font-bold text-white mb-2">ScaleForge</h1>
-            <p className="text-orange-400 text-lg">Engineering Cloud Platforms</p>
+            <h1 className="text-4xl font-bold text-white mb-2">ElvoraGloabal</h1>
+            <p className="text-[#00B3C6] text-lg">Engineering Cloud Platforms</p>
           </div>
 
           {/* Company Info */}
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-white leading-tight">
-              Password <span className="text-orange-500">recovery</span> made simple
+              Password <span className="text-[#00B3C6]">recovery</span> made simple
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed">
               Forgot your password? No worries. We'll help you reset it securely and get you back to managing your cloud infrastructure in no time.
@@ -179,15 +179,15 @@ export default function ForgotPasswordPage() {
           {/* Support Info */}
           <div className="mt-12 space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-[#00B3C6] rounded-full"></div>
               <span className="text-gray-300">Instant email delivery</span>
             </div>
             <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-[#00B3C6] rounded-full"></div>
               <span className="text-gray-300">Secure reset links</span>
             </div>
             <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-[#00B3C6] rounded-full"></div>
               <span className="text-gray-300">24/7 support available</span>
             </div>
           </div>
@@ -257,7 +257,7 @@ export default function ForgotPasswordPage() {
                   name="email"
                   value={email}
                   onChange={handleChange}
-                  className={`w-full pl-10 pr-4 py-3 bg-white/5 border ${errors.email ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all`}
+                  className={`w-full pl-10 pr-4 py-3 bg-white/5 border ${errors.email ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-all`}
                   placeholder="admin@example.com"
                 />
               </div>
@@ -270,7 +270,7 @@ export default function ForgotPasswordPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-orange-500/50 disabled:cursor-not-allowed text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full bg-[#00B3C6] hover:bg-[#00B3C6] disabled:bg-[#00B3C6]/50 disabled:cursor-not-allowed text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
             >
               {isLoading ? (
                 <span className="flex items-center justify-center">
@@ -301,7 +301,7 @@ export default function ForgotPasswordPage() {
               
               <Link
                 to="/admin/register"
-                className="block w-full text-orange-400 hover:text-orange-300 font-medium py-2.5 px-4 rounded-lg transition-all duration-200 text-center"
+                className="block w-full text-[#00B3C6] hover:text-[#00B3C6] font-medium py-2.5 px-4 rounded-lg transition-all duration-200 text-center"
               >
                 Create New Account
               </Link>
@@ -312,7 +312,7 @@ export default function ForgotPasswordPage() {
           <div className="mt-6 text-center">
             <p className="text-xs text-gray-500">
               Need help? Contact{' '}
-              <a href="mailto:support@scaleforce.com" className="text-orange-400 hover:text-orange-300 underline">
+              <a href="mailto:support@scaleforce.com" className="text-[#00B3C6] hover:text-[#00B3C6] underline">
                 support@scaleforce.com
               </a>
             </p>

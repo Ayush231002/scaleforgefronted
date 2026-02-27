@@ -96,7 +96,7 @@ export default function RegisterPage() {
 
     const levels = [
       { text: 'Very Weak', color: 'bg-red-500' },
-      { text: 'Weak', color: 'bg-orange-500' },
+      { text: 'Weak', color: 'bg-[#00B3C6]' },
       { text: 'Fair', color: 'bg-yellow-500' },
       { text: 'Good', color: 'bg-blue-500' },
       { text: 'Strong', color: 'bg-green-500' }
@@ -121,7 +121,7 @@ export default function RegisterPage() {
             <div className="flex items-center gap-3 mb-4">
             <h2 className="text-4xl font-extrabold text-white leading-tight">
           Join the future of <br />
-           <span className="text-orange-500">cloud engineering</span>
+           <span className="text-[#00B3C6]">cloud engineering</span>
         </h2>
            </div>
 
@@ -140,19 +140,19 @@ export default function RegisterPage() {
           {/* Benefits */}
           <div className="mt-12 space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-[#00B3C6] rounded-full"></div>
               <span className="text-gray-300">Free cloud assessment</span>
             </div>
             <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-[#00B3C6] rounded-full"></div>
               <span className="text-gray-300">Access to expert tools</span>
             </div>
             <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-[#00B3C6] rounded-full"></div>
               <span className="text-gray-300">24/7 technical support</span>
             </div>
             <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-[#00B3C6] rounded-full"></div>
               <span className="text-gray-300">Community of experts</span>
             </div>
           </div>
@@ -176,7 +176,7 @@ export default function RegisterPage() {
           {/* Mobile Logo */}
           <div className="lg:hidden text-center mb-8">
             <h1 className="text-3xl font-bold text-white mb-2">Create Account</h1>
-            <p className="text-gray-400">Join ScaleForge to scale your cloud infrastructure</p>
+            <p className="text-gray-400">Join ElvoraGlobal to scale your cloud infrastructure</p>
           </div>
 
           {/* Register Form */}
@@ -199,7 +199,7 @@ export default function RegisterPage() {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.fullName ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.fullName ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-all`}
                 placeholder="John Doe"
               />
               {errors.fullName && (
@@ -218,7 +218,7 @@ export default function RegisterPage() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.email ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.email ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-all`}
                 placeholder="john.doe@example.com"
               />
               {errors.email && (
@@ -237,7 +237,7 @@ export default function RegisterPage() {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.password ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.password ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-all`}
                 placeholder="••••••••"
               />
               {errors.password && (
@@ -274,7 +274,7 @@ export default function RegisterPage() {
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.confirmPassword ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.confirmPassword ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-all`}
                 placeholder="••••••••"
               />
               {errors.confirmPassword && (
@@ -287,16 +287,16 @@ export default function RegisterPage() {
               <label className="flex items-start">
                 <input
                   type="checkbox"
-                  className="w-4 h-4 bg-white/5 border-white/20 rounded focus:ring-2 focus:ring-orange-500 text-orange-500 mt-0.5"
+                  className="w-4 h-4 bg-white/5 border-white/20 rounded focus:ring-2 focus:ring-[#00B3C6] text-[#00B3C6] mt-0.5"
                   required
                 />
                 <span className="ml-2 text-sm text-gray-300">
                   I agree to the{' '}
-                  <Link to="/admin/terms" className="text-orange-400 hover:text-orange-300 underline">
+                  <Link to="/admin/terms" className="text-[#00B3C6] hover:text-[#00B3C6] underline">
                     Terms of Service
                   </Link>{' '}
                   and{' '}
-                  <Link to="/admin/privacy" className="text-orange-400 hover:text-orange-300 underline">
+                  <Link to="/admin/privacy" className="text-[#00B3C6] hover:text-[#00B3C6] underline">
                     Privacy Policy
                   </Link>
                 </span>
@@ -307,7 +307,7 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-orange-500/50 disabled:cursor-not-allowed text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full bg-[#00B3C6] hover:bg-[#00B3C6] disabled:bg-[#00B3C6]/50 disabled:cursor-not-allowed text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
             >
               {isLoading ? (
                 <span className="flex items-center justify-center">
@@ -357,7 +357,7 @@ export default function RegisterPage() {
             Already have an account?{' '}
             <Link
               to="/admin/login"
-              className="text-orange-400 hover:text-orange-300 font-medium transition-colors"
+              className="text-[#00B3C6] hover:text-[#00B3C6] font-medium transition-colors"
             >
               Sign in
             </Link>

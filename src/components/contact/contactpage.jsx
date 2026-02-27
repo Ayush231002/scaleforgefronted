@@ -12,7 +12,7 @@ export default function ContactPage() {
         {/* TOP HEADING */}
         <div className="pt-28 pb-20 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-wide">
-            Contact <span className="text-orange-500">Us</span>
+            Contact <span className="text-[#00B3C6]">Us</span>
           </h1>
           <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
             Connect with us for scalable DevOps solutions, powerful data analytics,
@@ -49,7 +49,7 @@ export default function ContactPage() {
             <p className="text-gray-300 text-sm">
               Noida, Uttar Pradesh, India
             </p>
-            <p className="text-xs text-orange-400 mt-2">
+            <p className="text-xs text-[#00B3C6] mt-2">
               View on Google Maps →
             </p>
           </a>

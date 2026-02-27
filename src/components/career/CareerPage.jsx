@@ -75,7 +75,7 @@ export default function CareerPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 font-bold text-white tracking-wide">
-            Join Our <span className="text-orange-400">Team</span>
+            Join Our <span className="text-[#00B3C6]">Team</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Help us build the future of cloud engineering. We're looking for talented individuals who are passionate about technology and innovation.
@@ -85,7 +85,7 @@ export default function CareerPage() {
         {/* Why Join Us */}
         <div className="mb-16 bg-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-white mb-8 text-center">
-            Why Scale <span className="text-orange-400">Forge</span>?
+            Why Scale <span className="text-[#00B3C6]">Forge</span>?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -124,7 +124,7 @@ export default function CareerPage() {
         {/* Job Openings */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-8 text-center">
-            Open <span className="text-orange-500">Positions</span>
+            Open <span className="text-[#00B3C6]">Positions</span>
           </h2>
           <div className="space-y-6">
             {openings.map((job, index) => (
@@ -144,7 +144,7 @@ export default function CareerPage() {
                       <span className="bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full">
                         {job.type}
                       </span>
-                      <span className="bg-orange-500/20 text-orange-400 px-2 py-1 rounded-full">
+                      <span className="bg-[#00B3C6]/20 text-[#00B3C6] px-2 py-1 rounded-full">
                         {job.experience}
                       </span>
                     </div>
@@ -196,7 +196,7 @@ export default function CareerPage() {
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
             We're always looking for talented people. Send us your resume and we'll keep you in mind for future opportunities.
           </p>
-          <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-blue-600 hover:to-blue-700 px-8 py-3 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105">
+          <button className="bg-gradient-to-r from-[#00B3C6] to-[#00B3C6] hover:from-blue-600 hover:to-blue-700 px-8 py-3 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105">
             Send Resume
           </button>
         </div>

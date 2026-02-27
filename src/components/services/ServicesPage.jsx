@@ -83,7 +83,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex items-center justify-center min-h-[400px]">
             <div className="text-center">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#00B3C6]"></div>
               <p className="mt-4 text-gray-300">Loading services...</p>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function ServicesPage() {
         {/* Main Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 font-bold text-white tracking-wide">
-            Provided <span className="text-orange-500">Services</span>
+            Provided <span className="text-[#00B3C6]">Services</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Reliable, scalable, and secure technology solutions including cloud infrastructure, DevOps pipelines, data analytics, and modern web applications
@@ -170,7 +170,7 @@ export default function ServicesPage() {
             {selectedCategory && (
               <button
                 onClick={() => handleCategoryClick(null)}
-                className="mt-4 px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
+                className="mt-4 px-6 py-2 bg-[#00B3C6] text-white rounded-lg hover:bg-[#00B3C6] transition-colors"
               >
                 View All Services
               </button>

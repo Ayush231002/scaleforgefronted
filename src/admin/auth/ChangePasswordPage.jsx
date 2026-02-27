@@ -128,7 +128,7 @@ export default function ChangePasswordPage() {
                 name="oldPassword"
                 value={formData.oldPassword}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.oldPassword ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.oldPassword ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-all`}
                 placeholder="Enter your old password"
               />
               {errors.oldPassword && (
@@ -147,7 +147,7 @@ export default function ChangePasswordPage() {
                 name="newPassword"
                 value={formData.newPassword}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.newPassword ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.newPassword ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-all`}
                 placeholder="Enter your new password"
               />
               {errors.newPassword && (
@@ -166,7 +166,7 @@ export default function ChangePasswordPage() {
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-white/5 border ${errors.confirmPassword ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all`}
+                className={`w-full px-4 py-3 bg-white/5 border ${errors.confirmPassword ? 'border-red-500' : 'border-white/20'} rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-all`}
                 placeholder="Confirm your new password"
               />
               {errors.confirmPassword && (
@@ -178,7 +178,7 @@ export default function ChangePasswordPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-orange-500/50 disabled:cursor-not-allowed text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full bg-[#00B3C6] hover:bg-[#00B3C6] disabled:bg-[#00B3C6]/50 disabled:cursor-not-allowed text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
             >
               {isLoading ? (
                 <span className="flex items-center justify-center">

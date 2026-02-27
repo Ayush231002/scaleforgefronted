@@ -66,8 +66,8 @@ export default function RegistrationSettings() {
           <button
             onClick={handleToggleRegistration}
             disabled={isLoading}
-            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 ${
-              isRegisterEnabled ? 'bg-orange-500' : 'bg-gray-600'
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:ring-offset-2 ${
+              isRegisterEnabled ? 'bg-[#00B3C6]' : 'bg-gray-600'
             } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             <span

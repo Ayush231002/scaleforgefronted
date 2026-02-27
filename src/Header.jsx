@@ -15,12 +15,12 @@ export default function Header() {
 
         {/* NAV */}
         <nav className="hidden md:flex items-center gap-10 text-sm text-gray-200">
-          <Link to="/" className="hover:text-orange-400">Home</Link>
-          <Link to="/about" className="hover:text-orange-400">About</Link>
-          <Link to="/services" className="hover:text-orange-400">Services</Link>
-          <Link to="/case-studies" className="hover:text-orange-400">Case Studies</Link>
-          <Link to="/career" className="hover:text-orange-400">Career</Link>
-          <Link to="/contact" className="hover:text-orange-400">Contact</Link>
+          <Link to="/" className="hover:text-[#00B3C6]">Home</Link>
+          <Link to="/about" className="hover:text-[#00B3C6]">About</Link>
+          <Link to="/services" className="hover:text-[#00B3C6]">Services</Link>
+          <Link to="/case-studies" className="hover:text-[#00B3C6]">Case Studies</Link>
+          <Link to="/career" className="hover:text-[#00B3C6]">Career</Link>
+          <Link to="/contact" className="hover:text-[#00B3C6]">Contact</Link>
         </nav>
 
         <Link

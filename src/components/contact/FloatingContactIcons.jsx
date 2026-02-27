@@ -23,7 +23,7 @@ export default function FloatingContactIcons() {
         href="mailto:contact@scaleforge.com"
         title="Mail Us"
         className="w-14 h-14 flex items-center justify-center rounded-full
-                   bg-gradient-to-br from-orange-500 to-orange-600
+                   bg-gradient-to-br from-[#00B3C6] to-[#00B3C6]
                    border-2 border-blue-500
                    shadow-xl hover:scale-110 transition"
       >

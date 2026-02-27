@@ -156,7 +156,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => setIsConsultModalOpen(true)}
-                  className="bg-linear-to-r from-[#00B3C6] to-[#00B3C6] hover:from-[#00B3C6] hover:to-orange-700 px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105"
+                  className="bg-linear-to-r from-[#00B3C6] to-[#00B3C6] hover:from-[#00B3C6] hover:to-[#00B3C6] px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105"
                 >
                   Book a Free Assessment
                 </button>
@@ -193,7 +193,7 @@ export default function HomePage() {
                 <div className="absolute bottom-0 left-0 w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
                 <div className="absolute top-1/4 left-0 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                 <div className="absolute bottom-1/4 right-0 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                <div className="absolute mid-1/2 right-0 w-4 h-4 bg-orange-400 rounded-full animate-pulse"></div>
+                <div className="absolute mid-1/2 right-0 w-4 h-4 bg-[#00B3C6] rounded-full animate-pulse"></div>
               </div>
             </div>
 
@@ -298,7 +298,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {popularServices.map((service) => (
                 <div key={service._id} className="group">
-                  <div className="bg-gray-800/50 backdrop-blur-lg border border-gray-700 rounded-2xl p-6 h-full hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="bg-gray-800/50 backdrop-blur-lg border border-gray-700 rounded-2xl p-6 h-full hover:border-[#00B3C6]/50 transition-all duration-300 hover:transform hover:scale-105">
                     {/* Service Header */}
                     <div className="flex items-center mb-4">
                       {service.imageUrl && (
@@ -312,7 +312,7 @@ export default function HomePage() {
                         />
                       )}
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                        <h3 className="text-xl font-bold text-white group-hover:text-[#00B3C6] transition-colors">
                           {service.name}
                         </h3>
                         <p className="text-sm text-gray-400">
@@ -333,7 +333,7 @@ export default function HomePage() {
                           {service.features.slice(0, 3).map((feature, index) => (
                             <span
                               key={index}
-                              className="inline-block bg-orange-500/20 text-orange-300 text-xs px-2 py-1 rounded-full"
+                              className="inline-block bg-[#00B3C6]/20 text-[#00B3C6] text-xs px-2 py-1 rounded-full"
                             >
                               {feature}
                             </span>
@@ -349,12 +349,12 @@ export default function HomePage() {
 
                     {/* Service Footer */}
                     <div className="flex items-center justify-between pt-4 border-t border-gray-700">
-                      {/* <div className="text-2xl font-bold text-orange-400">
+                      {/* <div className="text-2xl font-bold text-[#00B3C6]">
                         ${service.price || 'Contact'}
                       </div> */}
                       <button
                         onClick={() => navigate(`/services/${service._id}`)}
-                        className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                        className="bg-[#00B3C6] hover:bg-[#00B3C6] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                       >
                         Learn More
                       </button>
@@ -370,7 +370,7 @@ export default function HomePage() {
               <p className="text-gray-400 mb-6">Check back soon for our featured services</p>
               <button
                 onClick={() => navigate('/services')}
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                className="bg-[#00B3C6] hover:bg-[#00B3C6] text-white px-6 py-3 rounded-lg font-medium transition-colors"
               >
                 View All Services
               </button>
@@ -429,7 +429,7 @@ export default function HomePage() {
           bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-10
           transition-all duration-500 ease-out
           hover:-translate-y-2
-          hover:border-orange-500/40
+          hover:border-[#00B3C6]/4
           hover:shadow-[0_20px_60px_rgba(255,140,0,0.15)]
           group
         "
@@ -452,13 +452,13 @@ export default function HomePage() {
               <div
                 className="
                   mt-1 h-6 w-6 rounded-full
-                  bg-orange-500/20
+                  bg-[#00B3C6]/20
                   flex items-center justify-center
                   transition-all duration-300
-                  group-hover:bg-orange-500
+                  group-hover:bg-[#00B3C6]
                 "
               >
-                <div className="h-2.5 w-2.5 bg-orange-500 rounded-full group-hover:bg-white"></div>
+                <div className="h-2.5 w-2.5 bg-[#00B3C6] rounded-full group-hover:bg-white"></div>
               </div>
 
               <p className="text-gray-200 text-lg leading-relaxed">
@@ -519,7 +519,7 @@ export default function HomePage() {
 
               {/* Modal Header */}
               <div className="mb-6 text-center">
-                <h2 className="text-2xl font-bold text-white mb-2">Free <span className="text-orange-500">Assessment</span> </h2>
+                <h2 className="text-2xl font-bold text-white mb-2">Free <span className="text-[#00B3C6]">Assessment</span> </h2>
                 <p className="text-gray-400">Schedule your free cloud infrastructure consultation with our experts</p>
               </div>
 
@@ -532,7 +532,7 @@ export default function HomePage() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors ${
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-colors ${
                       errors.name ? 'border-red-500' : 'border-gray-600'
                     }`}
                     placeholder="Your full name"
@@ -549,7 +549,7 @@ export default function HomePage() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors ${
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-colors ${
                       errors.email ? 'border-red-500' : 'border-gray-600'
                     }`}
                     placeholder="your@email.com"
@@ -566,7 +566,7 @@ export default function HomePage() {
                     name="phoneNumber"
                     value={formData.phoneNumber}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors ${
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-colors ${
                       errors.phoneNumber ? 'border-red-500' : 'border-gray-600'
                     }`}
                     placeholder="+1 (555) 123-4567"
@@ -583,7 +583,7 @@ export default function HomePage() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors ${
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-colors ${
                       errors.subject ? 'border-red-500' : 'border-gray-600'
                     }`}
                     placeholder="Cloud infrastructure consultation"
@@ -600,7 +600,7 @@ export default function HomePage() {
                     value={formData.description}
                     onChange={handleInputChange}
                     rows={4}
-                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none transition-colors ${
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent resize-none transition-colors ${
                       errors.description ? 'border-red-500' : 'border-gray-600'
                     }`}
                     placeholder="Tell us about your project and requirements..."
@@ -638,7 +638,7 @@ export default function HomePage() {
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 px-4 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    className="flex-1 px-4 py-3 bg-gradient-to-r from-[#00B3C6] to-[#00B3C6] hover:from-[#00B3C6] hover:to-[#00B3C6] text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
                   >
                     Submit
                   </button>

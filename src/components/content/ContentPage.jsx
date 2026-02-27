@@ -87,7 +87,7 @@ export default function ContentPage() {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 font-bold text-white tracking-wide">
             Content
-            <span className="text-orange-500"> Hub</span>
+            <span className="text-[#00B3C6]"> Hub</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Technical articles, case studies, and industry insights from our cloud engineering experts
@@ -114,7 +114,7 @@ export default function ContentPage() {
                     
                     {/* Article Meta */}
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-xs text-orange-400 font-semibold uppercase tracking-wide">
+                      <span className="text-xs text-[#00B3C6] font-semibold uppercase tracking-wide">
                         {category.title}
                       </span>
                       <span className="text-xs text-gray-400">
@@ -123,7 +123,7 @@ export default function ContentPage() {
                     </div>
 
                     {/* Article Content */}
-                    <h3 className="text-lg font-semibold text-white mb-3 hover:text-orange-400 transition-colors">
+                    <h3 className="text-lg font-semibold text-white mb-3 hover:text-[#00B3C6] transition-colors">
                       {article.title}
                     </h3>
                     <p className="text-gray-300 text-sm leading-relaxed mb-4">
@@ -135,7 +135,7 @@ export default function ContentPage() {
                       <span className="text-xs text-gray-400">
                         {article.date}
                       </span>
-                      <button className="text-orange-400 hover:text-orange-300 text-sm font-medium transition-colors">
+                      <button className="text-[#00B3C6] hover:text-[#00B3C6] text-sm font-medium transition-colors">
                         Read More →
                       </button>
                     </div>
@@ -147,7 +147,7 @@ export default function ContentPage() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="mt-20 bg-gradient-to-r from-orange-500/20 to-purple-600/20 border border-orange-500/30 rounded-2xl p-8 text-center">
+        <div className="mt-20 bg-gradient-to-r from-[#00B3C6]/20 to-purple-600/20 border border-[#00B3C6]/30 rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">
             Stay Updated
           </h2>
@@ -158,9 +158,9 @@ export default function ContentPage() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="flex-1 px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6]"
             />
-            <button className="bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 px-6 py-2 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105">
+            <button className="bg-gradient-to-r from-[#00B3C6] to-purple-600 hover:from-[#00B3C6] hover:to-purple-700 px-6 py-2 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105">
               Subscribe
             </button>
           </div>
@@ -176,7 +176,7 @@ export default function ContentPage() {
           </p>
           <button
             onClick={() => window.location.href = "/user/register"}
-            className="bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 px-8 py-3 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105"
+            className="bg-gradient-to-r from-[#00B3C6] to-purple-600 hover:from-[#00B3C6] hover:to-purple-700 px-8 py-3 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105"
           >
             Become a Contributor
           </button>

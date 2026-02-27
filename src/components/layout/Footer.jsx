@@ -60,7 +60,7 @@ const Footer = () => {
                   href="https://twitter.com/scaleforce" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-orange-400 transition-colors"
+                  className="text-gray-400 hover:text-[#00B3C6] transition-colors"
                 >
                   <span className="text-xl">𝕏</span>
                 </a>
@@ -68,7 +68,7 @@ const Footer = () => {
                   href="https://linkedin.com/company/scaleforce" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-orange-400 transition-colors"
+                  className="text-gray-400 hover:text-[#00B3C6] transition-colors"
                 >
                   <span className="text-xl">in</span>
                 </a>
@@ -92,7 +92,7 @@ const Footer = () => {
               © 2024 ScaleForce. All rights reserved.
             </p>
             <p className="text-gray-400 text-sm">
-              Built with <span className="text-orange-500">♥</span> for cloud engineering excellence
+              Built with <span className="text-[#00B3C6]">♥</span> for cloud engineering excellence
             </p>
           </div>
         </div>

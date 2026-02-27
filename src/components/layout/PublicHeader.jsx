@@ -132,7 +132,7 @@ export default function PublicHeader() {
                 <img src="/Logo_Elvora_Global-removebg-preview.png" alt="ScaleForge" className="w-auto h-auto object-cover" />
               </div>
               {/* <span className="text-2xl font-bold text-white tracking-wide">
-            Scale<span className="text-orange-500">Forge</span>
+            Elvora<span className="text-[#00B3C6]">Global</span>
           </span> */}
             </Link>
           </div>
@@ -158,7 +158,7 @@ export default function PublicHeader() {
           <div className="hidden md:flex items-center space-x-4">
            { /*<Link
               to="/user/login"
-              className="bg-linear-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-4 py-2 rounded-lg text-sm font-medium text-white transition-all duration-200 transform hover:scale-105"
+              className="bg-linear-to-r from-[#00B3C6] to-[#00B3C6] hover:from-[#00B3C6] hover:to-[#00B3C6] px-4 py-2 rounded-lg text-sm font-medium text-white transition-all duration-200 transform hover:scale-105"
             >
               Sign In
             </Link>
@@ -259,7 +259,7 @@ export default function PublicHeader() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors ${
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-colors ${
                       errors.name ? 'border-red-500' : 'border-gray-600'
                     }`}
                     placeholder="Your full name"
@@ -276,7 +276,7 @@ export default function PublicHeader() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors ${
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-colors ${
                       errors.email ? 'border-red-500' : 'border-gray-600'
                     }`}
                     placeholder="your@email.com"
@@ -293,7 +293,7 @@ export default function PublicHeader() {
                     name="phoneNumber"
                     value={formData.phoneNumber}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors ${
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-colors ${
                       errors.phoneNumber ? 'border-red-500' : 'border-gray-600'
                     }`}
                     placeholder="+1 (555) 123-4567"
@@ -310,7 +310,7 @@ export default function PublicHeader() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors ${
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent transition-colors ${
                       errors.subject ? 'border-red-500' : 'border-gray-600'
                     }`}
                     placeholder="Cloud infrastructure consultation"
@@ -327,7 +327,7 @@ export default function PublicHeader() {
                     value={formData.description}
                     onChange={handleInputChange}
                     rows={4}
-                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none transition-colors ${
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00B3C6] focus:border-transparent resize-none transition-colors ${
                       errors.description ? 'border-red-500' : 'border-gray-600'
                     }`}
                     placeholder="Tell us about your project and requirements..."
@@ -347,7 +347,7 @@ export default function PublicHeader() {
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 px-4 py-3 bg-gradient-to-r from-[#00B3C6] to-[#00B3C6] hover:from-[#00B3C6] hover:to-orange-700 text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    className="flex-1 px-4 py-3 bg-gradient-to-r from-[#00B3C6] to-[#00B3C6] hover:from-[#00B3C6] hover:to-[#00B3C6] text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
                   >
                     Submit
                   </button>

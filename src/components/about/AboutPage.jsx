@@ -88,7 +88,7 @@ export default function AboutPage() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white tracking-wide">
-            About <span className="text-orange-500">Elvora Global</span>
+            About <span className="text-[#00B3C6]">ElvoraGlobal</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             End-to-end IT infrastructure, managed services and cloud operations company building reliable, secure and scalable technology environments.
@@ -149,7 +149,7 @@ export default function AboutPage() {
                 <Card key={index} className="bg-white/5 border-white/10">
                   <CardContent className="pt-6">
                     <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <Badge variant="default" className="bg-orange-500 text-white px-4 py-2 rounded-lg font-bold min-w-fit">
+                      <Badge variant="default" className="bg-[#00B3C6] text-white px-4 py-2 rounded-lg font-bold min-w-fit">
                         {item.year}
                       </Badge>
                       <div className="flex-1">
@@ -166,14 +166,14 @@ export default function AboutPage() {
         {/* Capabilities Tab Content */}
         <TabsContent value="capabilities" className="animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
-              Our Core <span className="text-orange-500">Capabilities</span>
+              Our Core <span className="text-[#00B3C6]">Capabilities</span>
             </h2>
             
             {coreCapabilities.map((capability, index) => (
               <Card key={index} className="bg-gradient-to-br from-white/5 to-white/10 border-white/10">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-orange-500/20 rounded-2xl flex items-center justify-center text-orange-500">
+                    <div className="w-16 h-16 bg-[#00B3C6]/20 rounded-2xl flex items-center justify-center text-[#00B3C6]">
                       {capability.icon}
                     </div>
                     <CardTitle className="text-2xl md:text-3xl text-white">{capability.category}</CardTitle>
@@ -183,13 +183,13 @@ export default function AboutPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {capability.services.map((service, serviceIndex) => (
                       <div key={serviceIndex} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-[#00B3C6] rounded-full mt-2 flex-shrink-0"></div>
                         <p className="text-gray-300">{service}</p>
                       </div>
                     ))}
                   </div>
                   {capability.note && (
-                    <p className="text-orange-400 text-sm italic">{capability.note}</p>
+                    <p className="text-[#00B3C6] text-sm italic">{capability.note}</p>
                   )}
                 </CardContent>
               </Card>
@@ -198,14 +198,14 @@ export default function AboutPage() {
             {/* What Makes Us Different */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
-                What Makes Us <span className="text-orange-500">Different</span>
+                What Makes Us <span className="text-[#00B3C6]">Different</span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {differentiators.map((item, index) => (
                   <Card key={index} className="bg-white/5 border-white/10 hover:bg-white/10 transition-colors">
                     <CardContent className="pt-6">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center text-orange-500 flex-shrink-0">
+                        <div className="w-12 h-12 bg-[#00B3C6]/20 rounded-xl flex items-center justify-center text-[#00B3C6] flex-shrink-0">
                           {item.icon}
                         </div>
                         <div>
@@ -223,7 +223,7 @@ export default function AboutPage() {
         {/* Approach Tab Content */}
         <TabsContent value="approach" className="animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
-              Our <span className="text-orange-500">Approach</span>
+              Our <span className="text-[#00B3C6]">Approach</span>
             </h2>
             
             <Card className="bg-gradient-to-br from-blue-500/10 to-purple-600/10 border-white/10">
@@ -242,7 +242,7 @@ export default function AboutPage() {
                   ].map((item, index) => (
                     <Card key={index} className="text-center bg-white/5 border-white/10">
                       <CardContent className="pt-6">
-                        <div className="w-16 h-16 bg-orange-500/20 rounded-2xl flex items-center justify-center text-orange-500 mx-auto mb-4">
+                        <div className="w-16 h-16 bg-[#00B3C6]/20 rounded-2xl flex items-center justify-center text-[#00B3C6] mx-auto mb-4">
                           {item.icon}
                         </div>
                         <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
@@ -256,7 +256,7 @@ export default function AboutPage() {
 
             {/* Vision & Mission */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="bg-gradient-to-br from-orange-500/10 to-orange-600/10 border-orange-500/20">
+              <Card className="bg-gradient-to-br from-[#00B3C6]/10 to-[#00B3C6]/10 border-[#00B3C6]/20">
                 <CardHeader>
                   <CardTitle className="text-2xl text-white">Our Vision</CardTitle>
                 </CardHeader>
@@ -294,13 +294,13 @@ export default function AboutPage() {
         {/* Leadership Tab Content */}
         <TabsContent value="leadership" className="animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
-              <span className="text-orange-500">Leadership</span>
+              <span className="text-[#00B3C6]">Leadership</span>
             </h2>
             
             <Card className="bg-gradient-to-br from-white/5 to-white/10 border-white/10">
               <CardContent className="pt-12 pb-12">
                 <div className="max-w-4xl mx-auto text-center">
-                  <div className="w-32 h-32 bg-orange-500/20 rounded-2xl flex items-center justify-center text-orange-500 mx-auto mb-8">
+                  <div className="w-32 h-32 bg-[#00B3C6]/20 rounded-2xl flex items-center justify-center text-[#00B3C6] mx-auto mb-8">
                     <Users className="w-16 h-16" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
@@ -312,19 +312,19 @@ export default function AboutPage() {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <Card className="bg-white/5 border-white/10">
                       <CardContent className="pt-6 text-center">
-                        <div className="text-3xl font-bold text-orange-500 mb-2">18+</div>
+                        <div className="text-3xl font-bold text-[#00B3C6] mb-2">18+</div>
                         <div className="text-gray-300">Years Experience</div>
                       </CardContent>
                     </Card>
                     <Card className="bg-white/5 border-white/10">
                       <CardContent className="pt-6 text-center">
-                        <div className="text-3xl font-bold text-orange-500 mb-2">IT Infra</div>
+                        <div className="text-3xl font-bold text-[#00B3C6] mb-2">IT Infra</div>
                         <div className="text-gray-300">Expertise</div>
                       </CardContent>
                     </Card>
                     <Card className="bg-white/5 border-white/10">
                       <CardContent className="pt-6 text-center">
-                        <div className="text-3xl font-bold text-orange-500 mb-2">DevOps</div>
+                        <div className="text-3xl font-bold text-[#00B3C6] mb-2">DevOps</div>
                         <div className="text-gray-300">Transformation</div>
                       </CardContent>
                     </Card>
@@ -335,7 +335,7 @@ export default function AboutPage() {
         </TabsContent>
 
         {/* CTA Section */}
-        <Card className="mt-16 bg-gradient-to-r from-orange-500/10 to-orange-600/10 border-orange-500/30">
+        <Card className="mt-16 bg-gradient-to-r from-[#00B3C6]/10 to-[#00B3C6]/10 border-[#00B3C6]/30">
           <CardContent className="pt-12 pb-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Ready to Transform Your IT Operations?
@@ -347,7 +347,7 @@ export default function AboutPage() {
               <Button 
                 size="lg" 
                 onClick={() => window.location.href = "/services"}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700"
+                className="bg-gradient-to-r from-[#00B3C6] to-[#00B3C6] hover:from-[#00B3C6] hover:to-[#00B3C6]"
               >
                 Explore Our Services
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -356,7 +356,7 @@ export default function AboutPage() {
                 variant="outline" 
                 size="lg"
                 onClick={() => window.location.href = "/contact"}
-                className="border-white/20 text-white hover:bg-white/10"
+                className="border-[#00B3C6]/20 text-white hover:bg-[#00B3C6]/10"
               >
                 Get in Touch
               </Button>
