@@ -165,7 +165,7 @@ export default function PublicHeader() {
             */}
             <button
               onClick={() => setIsConsultModalOpen(true)}
-               className="bg-linear-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-4 py-2 rounded-lg text-sm font-medium text-white transition-all duration-200 transform hover:scale-105"
+               className="bg-linear-to-r from-[#00B3C6] to-[#00B3C6] hover:from-[#00B3C6] hover:to-[#00B3C6] px-4 py-2 rounded-lg text-sm font-medium text-white transition-all duration-200 transform hover:scale-105"
             >
               Free Consultant
             </button>
@@ -246,7 +246,7 @@ export default function PublicHeader() {
 
               {/* Modal Header */}
               <div className="mb-6 text-center">
-                <h2 className="text-2xl font-bold text-white mb-2">Free <span className="text-orange-500">Consultation</span></h2>
+                <h2 className="text-2xl font-bold text-white mb-2">Free <span className="text-[#00B3C6]">Consultation</span></h2>
                 <p className="text-gray-400">Get expert advice on your cloud infrastructure needs</p>
               </div>
 
@@ -347,7 +347,7 @@ export default function PublicHeader() {
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 px-4 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    className="flex-1 px-4 py-3 bg-gradient-to-r from-[#00B3C6] to-[#00B3C6] hover:from-[#00B3C6] hover:to-orange-700 text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
                   >
                     Submit
                   </button>

@@ -9,7 +9,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <img src="/Logo_Elvora_Global.png" alt="ScaleForge Logo" className="h-16 w-auto" />
           <span className="text-2xl font-bold text-white tracking-wide">
-            Scale<span className="text-orange-500">Forge</span>
+            Scale<span className="text-[#00B3C6]">Forge</span>
           </span>
         </div>
 
@@ -25,7 +25,7 @@ export default function Header() {
 
         <Link
           to="/contact"
-          className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold"
+          className="bg-[#00B3C6] hover:bg-[#00B3C6] text-white px-6 py-2.5 rounded-lg text-sm font-semibold"
         >
           Free Consultation
         </Link>

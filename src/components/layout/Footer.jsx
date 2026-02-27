@@ -9,7 +9,7 @@ const Footer = () => {
           
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Scale<span className="text-orange-500">Forge</span>
+            <h3 className="text-lg font-semibold mb-4 text-white">Elvora<span className="text-[#00B3C6]">Global</span>
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Engineering Cloud Platforms That Scale. We help startups and enterprises design secure, scalable and cost-efficient cloud platforms.
@@ -23,7 +23,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/services" 
-                  className="text-gray-300 hover:text-orange-400 transition-colors text-sm"
+                  className="text-gray-300 hover:text-[#00B3C6] transition-colors text-sm"
                 >
                   Services
                 </Link>
@@ -31,7 +31,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/case-studies" 
-                  className="text-gray-300 hover:text-orange-400 transition-colors text-sm"
+                  className="text-gray-300 hover:text-[#00B3C6] transition-colors text-sm"
                 >
                   Case Studies
                 </Link>
@@ -45,13 +45,13 @@ const Footer = () => {
             <div className="space-y-2 text-sm">
               <p className="text-gray-300">
                 <span className="block font-medium">Email:</span>
-                <a href="mailto:info@scaleforce.com" className="text-orange-400 hover:text-orange-300 transition-colors">
+                <a href="mailto:info@scaleforce.com" className="text-[#00B3C6] hover:text-[#00B3C6] transition-colors">
                   info@scaleforce.com
                 </a>
               </p>
               <p className="text-gray-300">
                 <span className="block font-medium">Phone:</span>
-                <a href="tel:+1234567890" className="text-orange-400 hover:text-orange-300 transition-colors">
+                <a href="tel:+1234567890" className="text-[#00B3C6] hover:text-[#00B3C6] transition-colors">
                   +1 (234) 567-890
                 </a>
               </p>
@@ -76,7 +76,7 @@ const Footer = () => {
                   href="https://github.com/scaleforce" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-orange-400 transition-colors"
+                  className="text-gray-400 hover:text-[#00B3C6] transition-colors"
                 >
                   <span className="text-xl">⚡</span>
                 </a>

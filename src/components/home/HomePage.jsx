@@ -145,8 +145,8 @@ export default function HomePage() {
             {/* LEFT CONTENT */}
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Engineering Cloud <br />
-                <span className="text-orange-500">Platforms</span> That Scale
+                Your Single Partner for IT Infrastructure, <br />
+                <span className="text-[#1ECAD3]">Managed</span> Services & Cloud
               </h1>
 
               <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
@@ -156,7 +156,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => setIsConsultModalOpen(true)}
-                  className="bg-linear-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105"
+                  className="bg-linear-to-r from-[#00B3C6] to-[#00B3C6] hover:from-[#00B3C6] hover:to-orange-700 px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105"
                 >
                   Book a Free Assessment
                 </button>
@@ -282,7 +282,7 @@ export default function HomePage() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Popular <span className="text-orange-500">Services</span>
+              Popular <span className="text-[#00B3C6]">Services</span>
             </h2>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Discover our most sought-after cloud solutions trusted by startups and enterprises
@@ -292,7 +292,7 @@ export default function HomePage() {
           {/* Services Grid */}
           {loadingServices ? (
             <div className="flex justify-center items-center py-12">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00B3C6]"></div>
             </div>
           ) : popularServices.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -400,7 +400,7 @@ export default function HomePage() {
       {/* LEFT */}
       <div>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
-          Why clients <span className="text-orange-500">choose us</span>
+          Why clients <span className="text-[#00B3C6]">choose us</span>
         </h2>
 
         <ul className="space-y-6">
@@ -435,7 +435,7 @@ export default function HomePage() {
         "
       >
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
-          Impact we <span className="text-orange-500">deliver</span>
+          Impact we <span className="text-[#00B3C6]">deliver</span>
         </h2>
 
         <ul className="space-y-6">
@@ -488,7 +488,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => setIsConsultModalOpen(true)}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105"
+              className="bg-gradient-to-r from-[#00B3C6] to-[#00B3C6] hover:from-[#00B3C6] hover:to-[#00B3C6] px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105"
             >
               Let’s Get Started
             </button>
@@ -617,7 +617,7 @@ export default function HomePage() {
                       name="isBooked"
                       checked={formData.isBooked}
                       onChange={handleInputChange}
-                      className="mt-1 w-4 h-4 rounded border-gray-600 bg-gray-800/50 text-orange-500 focus:ring-orange-500 focus:ring-2"
+                      className="mt-1 w-4 h-4 rounded border-gray-600 bg-gray-800/50 text-[#1ECAD3] focus:ring-[#1ECAD3] focus:ring-2"
                     />
                     <span className="text-sm leading-tight text-gray-300">
                       Book a free Assessment (check to confirm booking, uncheck for general inquiry)
