@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiService } from '../../config';
 import { API_ENDPOINTS } from '../../config/routes';
+import HeroSlider from "./HeroSlider";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -121,85 +122,64 @@ export default function HomePage() {
     <LayoutWrapper>
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative overflow-hidden py-20 bg-[#050b1e]">
+<section className="relative overflow-hidden py-20 bg-[#050b1e]">
 
-        {/* VIDEO BACKGROUND */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
-        >
-          <source src="/videos/hero-bg.mp4" type="video/mp4" />
-        </video>
+  {/* VIDEO BACKGROUND */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+    className="absolute inset-0 w-full h-full object-cover opacity-20"
+  >
+    <source src="/videos/hero-bg.mp4" type="video/mp4" />
+  </video>
 
-        {/* GRADIENT OVERLAY (FIXED – NOT TOO DARK) */}
-        <div className="absolute inset-0 bg-linear-to-br from-[#050b1e]/70 via-[#0b1d3a]/60 to-[#020617]/70"></div>
+  {/* GRADIENT OVERLAY */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#050b1e]/70 via-[#0b1d3a]/60 to-[#020617]/70"></div>
 
-        {/* HERO CONTENT */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  {/* HERO CONTENT */}
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-            {/* LEFT CONTENT */}
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Your Single Partner for IT Infrastructure, <br />
-                <span className="text-[#1ECAD3]">Managed</span> Services & Cloud
-              </h1>
+      {/* LEFT CONTENT */}
+      <div>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          Your Single Partner for IT Infrastructure,
+          <span className="text-[#1ECAD3]">Managed</span> Services & Cloud
+        </h1>
 
-              <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-                We help startups and enterprises design secure, scalable and cost-efficient cloud platforms using modern DevOps and platform engineering practices.
-              </p>
+        <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+          We help startups and enterprises design secure, scalable and cost-efficient 
+          cloud platforms using modern DevOps and platform engineering practices.
+        </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={() => setIsConsultModalOpen(true)}
-                  className="bg-linear-to-r from-[#00B3C6] to-[#00B3C6] hover:from-[#00B3C6] hover:to-[#00B3C6] px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105"
-                >
-                  Book a Free Assessment
-                </button>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button
+            onClick={() => setIsConsultModalOpen(true)}
+            className="bg-gradient-to-r from-[#00B3C6] to-[#00B3C6] px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105"
+          >
+            Book a Free Assessment
+          </button>
 
-                <button
-                  onClick={() => window.location.href = "/services"}
-                  className="bg-white/10 hover:bg-white/20 px-8 py-4 rounded-lg font-semibold text-white border border-white/20 transition-colors"
-                >
-                  View Services
-                </button>
-              </div>
-            </div>
-
-            {/* RIGHT GRAPHIC */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full flex items-center justify-center">
-                  <div className="w-64 h-64 lg:w-72 lg:h-72 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-full flex items-center justify-center">
-                    <div className="w-48 h-48 lg:w-56 lg:h-56 bg-gradient-to-br from-blue-500/40 to-purple-600/40 rounded-full flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-3xl">☁️</span>
-                        </div>
-                        <p className="text-white font-semibold text-sm">
-                          Cloud Infrastructure
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Decorative dots */}
-                <div className="absolute top-0 right-0 w-4 h-4 bg-blue-500 rounded-full animate-pulse"></div>
-                <div className="absolute bottom-0 left-0 w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
-                <div className="absolute top-1/4 left-0 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                <div className="absolute bottom-1/4 right-0 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                <div className="absolute mid-1/2 right-0 w-4 h-4 bg-[#00B3C6] rounded-full animate-pulse"></div>
-              </div>
-            </div>
-
-          </div>
+          <button
+            onClick={() => navigate("/services")}
+            className="bg-white/10 hover:bg-white/20 px-8 py-4 rounded-lg font-semibold text-white border border-white/20 transition-colors"
+          >
+            View Services
+          </button>
         </div>
-      </section>
+      </div>
+
+      {/* RIGHT SLIDER */}
+      <div className="flex justify-center lg:justify-end">
+        <HeroSlider />
+      </div>
+
+    </div>
+  </div>
+</section>
 
      {/* ================= TRUSTED BY SECTION ================= */}
 <section className="relative bg-linear-to-b from-[#f8fafc] to-white py-12 overflow-hidden">
