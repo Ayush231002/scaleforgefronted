@@ -1,5 +1,5 @@
-import { apiService } from '../../../config/api.service.js';
-import { API_ENDPOINTS } from '../../../config/routes.js';
+import { apiService } from '../../config/api.service.js';
+import { API_ENDPOINTS } from '../../config/routes.js';
 
 class AdminRegistrationFormEnableDisableApiService {
   

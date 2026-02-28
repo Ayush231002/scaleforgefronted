@@ -3,8 +3,8 @@
  */
 
 // Import all service classes
-import CategoryService from './categoryService';
-import ServiceService from './serviceService';
+import { CategoryService } from './user/categoryService';
+import { ServiceService } from './user/serviceService';
 
 // Export all services
 export {

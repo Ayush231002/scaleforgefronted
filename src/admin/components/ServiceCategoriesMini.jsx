@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { adminCategoryService } from '../../services/admin/admin-category.service.js';
 
 const ServiceCategoriesMini = ({ onCategoryClick }) => {
   const [categories, setCategories] = useState([]);
@@ -9,10 +9,13 @@ const ServiceCategoriesMini = ({ onCategoryClick }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/v1/service/all-categories');
+        const response = await adminCategoryService.getAllCategories();
+        
+        // Extract data from response
+        const allCategories = response.data || response;
         
         // Filter only active categories and sort by order
-        const activeCategories = response.data.data
+        const activeCategories = allCategories
           .filter(category => category.isActive === true)
           .sort((a, b) => (a.order || 0) - (b.order || 0))
           .slice(0, 6); // Limit to 6 categories for dropdown

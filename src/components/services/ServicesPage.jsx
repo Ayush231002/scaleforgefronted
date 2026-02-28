@@ -124,8 +124,16 @@ export default function ServicesPage() {
                 <h3 className="text-xl font-bold text-white mb-3">{service.title || service.name}</h3>
 
                 {/* Description */}
-                <p className="text-gray-300 mb-4">
-                  {service.description || 'Professional service with exceptional quality and support'}
+                <p className="text-gray-300 mb-4 line-clamp-2">
+                  {service.description ? (
+                    <>
+                      {service.description.split(' ').slice(0, 20).join(' ')}...
+                    </>
+                  ) : (
+                    <>
+                      Professional service with exceptional quality and support
+                    </>
+                  )}
                 </p>
 
                 {/* Features */}

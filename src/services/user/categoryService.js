@@ -1,5 +1,5 @@
-import { apiService } from '../config';
-import { API_ENDPOINTS } from '../config/routes';
+import { apiService } from '../../config';
+import { API_ENDPOINTS } from '../../config/routes';
 
 /**
  * Category Service - Single source of truth for all category-related API methods
@@ -92,4 +92,5 @@ class CategoryService {
   }
 }
 
+export { CategoryService };
 export default CategoryService;

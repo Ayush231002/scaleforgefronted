@@ -1,5 +1,5 @@
-import { apiService } from '../config';
-import { API_ENDPOINTS } from '../config/routes';
+import { apiService } from '../../config';
+import { API_ENDPOINTS } from '../../config/routes';
 
 /**
  * Service Service - Single source of truth for all service-related API methods
@@ -139,4 +139,5 @@ class ServiceService {
   }
 }
 
+export { ServiceService };
 export default ServiceService;

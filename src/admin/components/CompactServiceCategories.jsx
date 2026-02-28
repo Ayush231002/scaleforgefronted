@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { CategoryService } from '../../services';
+import { adminCategoryService } from '../../services/admin/admin-category.service.js';
 
 const CompactServiceCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -13,7 +13,11 @@ const CompactServiceCategories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const allCategories = await CategoryService.getAllCategories();
+        const response = await adminCategoryService.getAllCategories();
+        console.log('All categories response:', response);
+        
+        // Extract data from response
+        const allCategories = response.data || response;
         console.log('All categories:', allCategories);
         
         // Limit to 8 categories for compact view

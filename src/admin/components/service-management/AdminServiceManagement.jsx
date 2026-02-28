@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { adminServiceService } from '../../../services/admin/admin-service.service.js';
+import { adminCategoryService } from '../../../services/admin/admin-category.service.js';
 
 const AdminServiceManagement = () => {
   const [services, setServices] = useState([]);
@@ -30,13 +31,14 @@ const AdminServiceManagement = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      // Fetch services
-      const servicesResponse = await axios.get('http://localhost:8080/api/v1/service/all-services');
-      const activeServices = servicesResponse.data.data || [];
+      // Fetch services and categories in parallel
+      const [servicesResponse, categoriesResponse] = await Promise.all([
+        adminServiceService.getAllServices(),
+        adminCategoryService.getAllCategories()
+      ]);
       
-      // Fetch categories
-      const categoriesResponse = await axios.get('http://localhost:8080/api/v1/service/all-categories');
-      const activeCategories = categoriesResponse.data.data || [];
+      const activeServices = servicesResponse.data || [];
+      const activeCategories = categoriesResponse.data || [];
       
       setServices(activeServices);
       setCategories(activeCategories);
@@ -66,17 +68,11 @@ const AdminServiceManagement = () => {
 
       if (editingService) {
         // Update service
-        const response = await axios.put(
-          `http://localhost:8080/api/v1/service/update-service/${editingService._id}`,
-          serviceData
-        );
+        await adminServiceService.updateService(editingService._id, serviceData);
         alert('Service updated successfully');
       } else {
         // Create new service
-        const response = await axios.post(
-          'http://localhost:8080/api/v1/service/create-service',
-          serviceData
-        );
+        await adminServiceService.createService(serviceData);
         alert('Service created successfully');
       }
       
@@ -95,7 +91,7 @@ const AdminServiceManagement = () => {
   const handleDelete = async (serviceId) => {
     if (window.confirm('Are you sure you want to delete this service?')) {
       try {
-        await axios.delete(`http://localhost:8080/api/v1/service/delete-service/${serviceId}`);
+        await adminServiceService.deleteService(serviceId);
         alert('Service deleted successfully');
         fetchData();
       } catch (error) {
@@ -108,10 +104,7 @@ const AdminServiceManagement = () => {
   // Handle toggle service status
   const toggleServiceStatus = async (serviceId, currentStatus) => {
     try {
-      await axios.patch(
-        `http://localhost:8080/api/v1/service/toggle-service/${serviceId}`,
-        { isActive: !currentStatus }
-      );
+      await adminServiceService.toggleServiceStatus(serviceId, { isActive: !currentStatus });
       alert(`Service ${!currentStatus ? 'activated' : 'deactivated'} successfully`);
       fetchData();
     } catch (error) {

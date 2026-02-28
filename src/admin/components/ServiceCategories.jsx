@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { adminCategoryService } from '../../services/admin/admin-category.service.js';
 import "../../styles/ServiceCategories.css";
 
 const ServiceCategories = () => {
@@ -12,10 +12,13 @@ const ServiceCategories = () => {
     const fetchCategories = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:8080/api/v1/service/all-categories');
+        const response = await adminCategoryService.getAllCategories();
+        
+        // Extract data from response
+        const allCategories = response.data || response;
         
         // Filter only active categories
-        const activeCategories = response.data.data.filter(
+        const activeCategories = allCategories.filter(
           category => category.isActive === true
         );
         

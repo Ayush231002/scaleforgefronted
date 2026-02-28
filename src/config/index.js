@@ -1,9 +1,12 @@
-// API Services - Updated paths to services/auth folder
-export { default as adminRegistrationFormEnableDisableApiService } from '../services/auth/registration/admin-registration-form-enable-disable-api.service.js';
+// API Services - Updated paths to services folders
+export { default as adminRegistrationFormEnableDisableApiService } from '../services/admin/admin-registration-form-enable-disable-api.service.js';
 
 // Main API service
 export { default as apiService } from './api.service.js';
 
 // Auth services
-export { default as userAuthService } from '../services/auth/user/user-auth.service.js';
-export { default as adminAuthService } from '../services/auth/admin/admin-auth.service.js';
+export { default as adminAuthService } from '../services/admin/admin-auth.service.js';
+
+// User services
+export { CategoryService } from '../services/user/categoryService.js';
+export { ServiceService } from '../services/user/serviceService.js';

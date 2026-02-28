@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { LoginPage, RegisterPage, ForgotPasswordPage, DashboardPage, AdminLayout } from "./admin";
 import ChangePasswordPage from "./admin/auth/ChangePasswordPage";
 import RegistrationSettings from "./admin/auth/RegistrationSettings";
-import AdminRegisterPage from "./admin/auth/RegisterPage";
 import AdminRegistrationWrapper from "./admin/auth/AdminRegistrationWrapper";
 //// Admin Enquiry Management
 import UserEnquiryPage from "./admin/components/consultant/UserEnquiryPage";
@@ -20,17 +19,11 @@ import AdminAddServicePage from "./admin/components/service-management/AdminAddS
 
 
 
-
-// User components
-import UserLoginPage from "./components/auth/UserLoginPage";
-import UserRegisterPage from "./components/auth/UserRegisterPage";
-import UserDashboard from "./components/auth/UserDashboard";
-import ServiceDetailPage from "./components/services/ServiceDetailPage";
-
 // Common components
 import HomePage from "./components/home/HomePage";
 import CaseStudiesPage from "./components/casestudies/CaseStudiesPage";
 import ServicesPage from "./components/services/ServicesPage";
+import ServiceDetailPage from "./components/services/ServiceDetailPage";
 import ServiceCategories from "./admin/components/ServiceCategories";
 import ContentPage from "./components/content/ContentPage";
 import CareerPage from "./components/career/CareerPage";
@@ -39,11 +32,9 @@ import RegistrationDisabledPage from "./components/auth/RegistrationDisabledPage
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 // Context providers
-import { UserAuthProvider, useUserAuth } from "./context/UserAuthContext";
 import { AdminAuthProvider, useAdminAuth } from "./context/AdminAuthContext";
 
 function AppRoutes() {
-  const { isAuthenticated: isUserAuthenticated, isLoading: isUserLoading } = useUserAuth();
   const { isAuthenticated: isAdminAuthenticated, isLoading: isAdminLoading } = useAdminAuth();
 
   return (
@@ -59,27 +50,7 @@ function AppRoutes() {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
 
-      {/* 🔐 USER AUTH PAGES */}
-      <Route 
-        path="/user/login" 
-        element={isUserAuthenticated ? <Navigate to="/user/dashboard" replace /> : <UserLoginPage />} 
-      />
-      <Route 
-        path="/user/register" 
-        element={isUserAuthenticated ? <Navigate to="/user/dashboard" replace /> : <UserRegisterPage />} 
-      />
-      <Route path="/user/forgot-password" element={<ForgotPasswordPage />} />
-
-      {/* 👤 USER DASHBOARD */}
-      <Route path="/user" element={
-        <ProtectedRoute isAuthenticated={isUserAuthenticated} isLoading={isUserLoading}>
-          <UserDashboard />
-        </ProtectedRoute>
-      }>
-        <Route path="dashboard" element={<UserDashboard />} />
-      </Route>
-
-      {/* 🔐 ADMIN AUTH PAGES (Standalone - No Header) */}
+      {/*  ADMIN AUTH PAGES (Standalone - No Header) */}
       <Route 
         path="/admin/login" 
         element={isAdminAuthenticated ? <Navigate to="/admin/dashboard" replace /> : <LoginPage />} 
@@ -109,8 +80,7 @@ function AppRoutes() {
 
       {/* 🔁 LEGACY REDIRECTS */}
       <Route path="/login" element={<Navigate to="/admin/login" replace />} />
-      <Route path="/register" element={<Navigate to="/user/register" replace />} />
-      <Route path="/dashboard" element={<Navigate to="/user/dashboard" replace />} />
+      <Route path="/register" element={<Navigate to="/admin/login" replace />} />
 
       {/* ❌ FALLBACK */}
       <Route path="*" element={<Navigate to="/" replace />} />
@@ -120,13 +90,11 @@ function AppRoutes() {
 
 function App() {
   return (
-    <UserAuthProvider>
-      <AdminAuthProvider>
+    <AdminAuthProvider>
         <Router>
           <AppRoutes />
         </Router>
       </AdminAuthProvider>
-    </UserAuthProvider>
   );
 }
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { apiService } from '../../config/api.service.js';
+import { adminRegistrationService } from '../../services/admin/admin-registration.service.js';
 
 export default function RegistrationSettings() {
   const [isRegisterEnabled, setIsRegisterEnabled] = useState(true);
@@ -13,10 +13,12 @@ export default function RegistrationSettings() {
 
   const fetchRegistrationStatus = async () => {
     try {
-      const response = await apiService.getRegistrationStatus();
-      setIsRegisterEnabled(response.data.isRegisterEnabled);
+      const response = await adminRegistrationService.getRegistrationStatus();
+      setIsRegisterEnabled(response.data?.isRegisterEnabled ?? response.data);
     } catch (error) {
       console.error('Failed to fetch registration status:', error);
+      // Set default enabled status if there's an error
+      setIsRegisterEnabled(true);
     }
   };
 
@@ -26,11 +28,11 @@ export default function RegistrationSettings() {
     setSuccess('');
 
     try {
-      await apiService.updateRegistrationStatus(!isRegisterEnabled);
+      await adminRegistrationService.updateRegistrationStatus(!isRegisterEnabled);
       setIsRegisterEnabled(!isRegisterEnabled);
       setSuccess(`Registration ${!isRegisterEnabled ? 'enabled' : 'disabled'} successfully!`);
     } catch (error) {
-      setError('Failed to update registration status. Please try again.');
+      setError(error.message || 'Failed to update registration status. Please try again.');
     } finally {
       setIsLoading(false);
     }
