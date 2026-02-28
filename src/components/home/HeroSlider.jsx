@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-const heroImages = [
+const images = [
   "/images/first.jpeg",
   "/images/second.jpeg",
   "/images/third.jpeg",
@@ -10,33 +10,69 @@ const heroImages = [
 ];
 
 export default function HeroSlider() {
-  const [index, setIndex] = useState(0);
+  const [centerIndex, setCenterIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % heroImages.length);
+      setCenterIndex((prev) => (prev + 1) % images.length);
     }, 4000);
-
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+    <div className="relative w-96 h-96 flex items-center justify-center">
 
-      <AnimatePresence mode="wait">
-        <motion.img
-          key={index}
-          src={heroImages[index]}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      </AnimatePresence>
+      {/* Background Glow */}
+      <div className="absolute w-[420px] h-[420px] rounded-full bg-gradient-to-r from-[#00B3C6]/20 via-purple-500/20 to-[#1ECAD3]/20 blur-3xl animate-pulse"></div>
 
-      {/* Glow Border */}
-      <div className="absolute inset-0 rounded-2xl border border-[#1ECAD3]/30 pointer-events-none"></div>
+      {/* Rotating Orbit Container */}
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{
+          repeat: Infinity,
+          duration: 20,
+          ease: "linear"
+        }}
+        className="absolute w-full h-full"
+      >
+        {images.map((img, i) => {
+          const angle = (i * 360) / images.length;
+          const radius = 160;
+
+          return (
+            <div
+              key={i}
+              className="absolute"
+              style={{
+                transform: `
+                  rotate(${angle}deg)
+                  translate(${radius}px)
+                  rotate(-${angle}deg)
+                `,
+                top: "50%",
+                left: "50%",
+                transformOrigin: "0 0",
+              }}
+            >
+              <img
+                src={img}
+                alt="orbit"
+                className="w-20 h-20 rounded-xl object-cover border border-[#1ECAD3]/40 shadow-lg"
+              />
+            </div>
+          );
+        })}
+      </motion.div>
+
+      {/* Center Main Image */}
+      <motion.img
+        key={centerIndex}
+        src={images[centerIndex]}
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="w-52 h-52 rounded-2xl object-cover border border-[#1ECAD3]/50 shadow-[0_0_40px_rgba(0,179,198,0.3)] z-10"
+      />
     </div>
   );
 }
