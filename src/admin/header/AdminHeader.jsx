@@ -46,7 +46,7 @@ export default function AdminHeader() {
 
   const menuItems = [
     { name: 'Admin Dashboard', href: '/admin/dashboard', icon: '⚡' },
-    { name: 'About Management', href: '/admin/about', icon: '📋' },
+    // { name: 'About Management', href: '/admin/about', icon: '📋' },
     { name: 'Services Management', href: '/admin/services', icon: '⚙️' },
     { name: 'Case Studies Management', href: '/admin/case-studies', icon: '📊' },
     { name: 'Job Posting Management', href: '/admin/jobs', icon: '💼' },

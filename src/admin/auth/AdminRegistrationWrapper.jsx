@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { apiService } from '../../config/api.service.js';
+import { adminRegistrationFormEnableDisableApiService } from '../../services/admin/admin-registration-form-enable-disable-api.service.js';
 import AdminRegisterPage from './RegisterPage';
 import RegistrationDisabledPage from '../../components/auth/RegistrationDisabledPage';
 
@@ -15,7 +15,7 @@ export default function AdminRegistrationWrapper() {
 
   const checkRegistrationStatus = async () => {
     try {
-      const response = await apiService.getRegistrationStatus();
+      const response = await adminRegistrationFormEnableDisableApiService.getRegistrationStatus();
       setIsRegisterEnabled(response.data.isRegisterEnabled);
     } catch (error) {
       console.error('Failed to fetch registration status:', error);
