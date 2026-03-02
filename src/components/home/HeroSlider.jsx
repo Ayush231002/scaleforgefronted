@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
   "/images/first.jpeg",
@@ -10,69 +10,52 @@ const images = [
 ];
 
 export default function HeroSlider() {
-  const [centerIndex, setCenterIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCenterIndex((prev) => (prev + 1) % images.length);
-    }, 4000);
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3500);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-96 h-96 flex items-center justify-center">
+    <div className="relative w-[520px] h-[520px] flex items-center justify-center perspective-[1200px]">
 
-      {/* Background Glow */}
-      <div className="absolute w-[420px] h-[420px] rounded-full bg-gradient-to-r from-[#00B3C6]/20 via-purple-500/20 to-[#1ECAD3]/20 blur-3xl animate-pulse"></div>
+      {/* Glow Background */}
+      <div className="absolute w-[600px] h-[600px] rounded-full 
+      bg-gradient-to-r from-[#00B3C6]/20 via-purple-500/20 to-[#1ECAD3]/20 
+      blur-3xl"></div>
 
-      {/* Rotating Orbit Container */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{
-          repeat: Infinity,
-          duration: 20,
-          ease: "linear"
-        }}
-        className="absolute w-full h-full"
-      >
+      {/* 3D Card Stack */}
+      <div className="relative w-full h-full flex items-center justify-center">
+
         {images.map((img, i) => {
-          const angle = (i * 360) / images.length;
-          const radius = 160;
+          const position = (i - index + images.length) % images.length;
+
+          if (position > 2) return null;
 
           return (
-            <div
-              key={i}
-              className="absolute"
-              style={{
-                transform: `
-                  rotate(${angle}deg)
-                  translate(${radius}px)
-                  rotate(-${angle}deg)
-                `,
-                top: "50%",
-                left: "50%",
-                transformOrigin: "0 0",
+            <motion.img
+              key={img}
+              src={img}
+              className="absolute w-72 h-72 rounded-3xl object-cover border border-[#1ECAD3]/50 shadow-xl"
+              animate={{
+                x: position === 0 ? 0 : position === 1 ? 80 : 160,
+                y: position === 0 ? 0 : position === 1 ? 20 : 40,
+                scale: position === 0 ? 1 : position === 1 ? 0.9 : 0.8,
+                rotateY: position === 0 ? 0 : -20,
+                opacity: position === 0 ? 1 : 0.6,
+                zIndex: 10 - position,
               }}
-            >
-              <img
-                src={img}
-                alt="orbit"
-                className="w-20 h-20 rounded-xl object-cover border border-[#1ECAD3]/40 shadow-lg"
-              />
-            </div>
+              transition={{ duration: 0.8 }}
+              style={{ transformStyle: "preserve-3d" }}
+            />
           );
         })}
-      </motion.div>
 
-      {/* Center Main Image */}
-      <motion.img
-        key={centerIndex}
-        src={images[centerIndex]}
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="w-52 h-52 rounded-2xl object-cover border border-[#1ECAD3]/50 shadow-[0_0_40px_rgba(0,179,198,0.3)] z-10"
-      />
+      </div>
+
     </div>
   );
 }
