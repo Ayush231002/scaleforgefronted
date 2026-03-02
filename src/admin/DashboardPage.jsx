@@ -4,10 +4,10 @@ export default function DashboardPage() {
       {/* Welcome Section */}
       <div className="mb-10">
         <h2 className="text-3xl font-bold text-white mb-2">
-          Welcome to <span className="text-orange-500">Dashboard</span>!
+          Welcome to <span className="text-[#00B3C6]">Dashboard</span>!
         </h2>
         <p className="text-gray-300">
-          You have successfully logged in to ScaleForge.
+          You have successfully logged in to ElvoraGlobal.
         </p>
       </div>
 
@@ -39,7 +39,7 @@ export default function DashboardPage() {
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 rounded-lg">
+          <button className="bg-[#00B3C6] hover:bg-[#00B3C6] text-white px-4 py-3 rounded-lg">
             New Project
           </button>
 

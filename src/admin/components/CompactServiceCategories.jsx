@@ -69,7 +69,7 @@ const CompactServiceCategories = () => {
       <div className="bg-white/5 backdrop-blur-lg border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex items-center justify-center">
-            <div className="inline-block animate-spin rounded-full h-4 w-4 border-b-2 border-orange-500"></div>
+            <div className="inline-block animate-spin rounded-full h-4 w-4 border-b-2 border-[#00B3C6]"></div>
           </div>
         </div>
       </div>
@@ -91,7 +91,7 @@ const CompactServiceCategories = () => {
               onClick={handleAllServicesClick}
               className={`flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 whitespace-nowrap ${
                 !selectedCategory
-                  ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25 transform scale-105'
+                  ? 'bg-[#00B3C6] text-white shadow-lg shadow-[#00B3C6]/25 transform scale-105'
                   : 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20 hover:scale-105'
               }`}
             >
@@ -105,7 +105,7 @@ const CompactServiceCategories = () => {
                 onClick={() => handleCategoryClick(category)}
                 className={`flex-shrink-0 flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 whitespace-nowrap border ${
                   selectedCategory?._id === category._id
-                    ? 'bg-orange-500 text-white border-orange-500 shadow-lg shadow-orange-500/25 transform scale-105'
+                    ? 'bg-[#00B3C6] text-white border-[#00B3C6] shadow-lg shadow-[#00B3C6]/25 transform scale-105'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20 border-white/20 hover:border-white/30 hover:scale-105'
                 }`}
               >

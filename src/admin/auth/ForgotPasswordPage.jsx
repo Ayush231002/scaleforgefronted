@@ -313,7 +313,7 @@ export default function ForgotPasswordPage() {
             <p className="text-xs text-gray-500">
               Need help? Contact{' '}
               <a href="mailto:support@scaleforce.com" className="text-[#00B3C6] hover:text-[#00B3C6] underline">
-                support@scaleforce.com
+                support@elvoraglobal.com
               </a>
             </p>
           </div>

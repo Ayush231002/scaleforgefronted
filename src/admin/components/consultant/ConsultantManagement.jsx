@@ -20,8 +20,8 @@ const ConsultantManagement = () => {
               </svg>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-white">User <span className="text-orange-500"> Enquiries</span> </h3>
-              <p className="text-gray-400 text-sm">Manage user <span className="text-orange-500"> consultation</span> requests</p>
+              <h3 className="text-lg font-semibold text-white">User <span className="text-[#00B3C6]"> Enquiries</span> </h3>
+              <p className="text-gray-400 text-sm">Manage user <span className="text-[#00B3C6]"> consultation</span> requests</p>
             </div>
           </div>
           <Link

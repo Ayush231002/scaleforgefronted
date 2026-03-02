@@ -11,9 +11,9 @@ const AdminServiceManagementPage = () => {
       <div className="bg-gray-800 shadow-sm border-b border-gray-700">
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <h1 className="text-2xl font-bold text-white">Admin <span className="text-orange-500">Dashboard</span></h1>
+            <h1 className="text-2xl font-bold text-white">Admin <span className="text-[#00B3C6]">Dashboard</span></h1>
             <div className="text-sm text-gray-400">
-              Service <span className="text-orange-500">Management</span>
+              Service <span className="text-[#00B3C6]">Management</span>
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@ const AdminServiceManagementPage = () => {
               onClick={() => setActiveTab('services')}
               className={`py-4 px-1 border-b-2 font-medium text-sm ${
                 activeTab === 'services'
-                  ? 'border-orange-500 text-orange-600'
+                  ? 'border-[#00B3C6] text-[#00B3C6]'
                   : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-600'
               }`}
             >
@@ -37,7 +37,7 @@ const AdminServiceManagementPage = () => {
               onClick={() => setActiveTab('categories')}
               className={`py-4 px-1 border-b-2 font-medium text-sm ${
                 activeTab === 'categories'
-                  ? 'border-orange-500 text-orange-600'
+                  ? 'border-[#00B3C6] text-[#00B3C6]'
                   : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-600'
               }`}
             >

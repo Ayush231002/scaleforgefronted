@@ -152,10 +152,10 @@ const AdminServiceCategoryManagement = () => {
     <div className="p-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-white">Service Category <span className="text-orange-500"> Management</span></h1>
+        <h1 className="text-2xl font-bold text-white">Service Category <span className="text-[#00B3C6]"> Management</span></h1>
         <button
           onClick={() => navigate('/admin/add-category')}
-          className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors"
+          className="bg-[#00B3C6] text-white px-4 py-2 rounded-lg hover:bg-[#00B3C6] transition-colors"
         >
           Add New Category
         </button>

@@ -5,7 +5,7 @@ export default function AdminAboutPage() {
   const [isEditing, setIsEditing] = useState(false);
   const [aboutData, setAboutData] = useState({
     company: {
-      name: 'ScaleForge',
+      name: 'ElvoraGlobal',
       description: 'Engineering Cloud Platforms That Scale',
       founded: '2024',
       teamSize: '50+',

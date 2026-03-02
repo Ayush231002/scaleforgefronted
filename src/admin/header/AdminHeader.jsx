@@ -118,7 +118,7 @@ export default function AdminHeader() {
                 className="flex items-center gap-1 hover:opacity-80 transition-opacity"
               >
                 <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
-                  <img src="/header_logo.png" alt="ScaleForge" className="w-full h-full object-contain" />
+                  <img src="/header_logo.png" alt="ElvoraGlobal" className="w-full h-full object-contain" />
                 </div>
                 <h1 className="text-xl font-bold text-white">
                   Elvora<span className="text-[#00B3C6]">Global</span>
