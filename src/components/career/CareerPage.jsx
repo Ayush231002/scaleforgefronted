@@ -85,7 +85,7 @@ export default function CareerPage() {
         {/* Why Join Us */}
         <div className="mb-16 bg-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-white mb-8 text-center">
-            Why Scale <span className="text-[#00B3C6]">Forge</span>?
+            Why Elvora<span className="text-[#00B3C6]">Global</span>?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
