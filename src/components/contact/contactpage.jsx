@@ -70,7 +70,7 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto pb-24">
           <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl overflow-hidden shadow-xl">
             <iframe
-              title="ScaleForge Location"
+              title="ElvoraGlobal Location"
               src="https://www.google.com/maps?q=Noida,Uttar+Pradesh,India&output=embed"
               width="100%"
               height="400"

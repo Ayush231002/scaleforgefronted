@@ -32,7 +32,7 @@ export default function FloatingContactIcons() {
 
       {/* LinkedIn */}
       <a
-        href="https://www.linkedin.com/company/scaleforge"
+        href="https://www.linkedin.com/company/elvora-global-private-limited/"
         target="_blank"
         rel="noopener noreferrer"
         title="LinkedIn"
