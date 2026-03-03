@@ -65,6 +65,12 @@ const API_CONFIG = {
       DELETE: '/consultation/:id',
     },
     
+    // Job endpoints
+    JOBS: {
+      GET_ACTIVE_JOBS: '/job/get-active-jobs',
+      GET_JOB_BY_ID: '/job/:id',
+    },
+    
     // Health check
     HEALTH: '/healthcheck',
   }

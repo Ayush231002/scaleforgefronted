@@ -1,72 +1,50 @@
 import LayoutWrapper from '../layout/LayoutWrapper';
+import { useState, useEffect } from 'react';
+import { jobService } from '../../services/user/jobService.js';
 
 export default function CareerPage() {
-  const openings = [
-    {
-      title: "Senior Cloud Engineer",
-      department: "Engineering",
-      location: "Remote",
-      type: "Full-time",
-      experience: "5+ years",
-      description: "We're looking for an experienced Cloud Engineer to help design and implement scalable cloud solutions for our clients.",
-      requirements: [
-        "5+ years of experience with AWS/Azure/GCP",
-        "Strong knowledge of Kubernetes and Docker",
-        "Experience with Infrastructure as Code (Terraform, CloudFormation)",
-        "Proficiency in CI/CD pipelines",
-        "Strong problem-solving skills"
-      ],
-      benefits: ["Competitive salary", "Remote work", "Health insurance", "Professional development"]
-    },
-    {
-      title: "DevOps Engineer",
-      department: "Engineering",
-      location: "Remote",
-      type: "Full-time",
-      experience: "3+ years",
-      description: "Join our DevOps team to build and maintain robust infrastructure and deployment pipelines.",
-      requirements: [
-        "3+ years of DevOps experience",
-        "Experience with containerization and orchestration",
-        "Knowledge of monitoring and logging tools",
-        "Scripting skills (Python, Bash, etc.)",
-        "Understanding of security best practices"
-      ],
-      benefits: ["Competitive salary", "Remote work", "Health insurance", "Tech budget"]
-    },
-    {
-      title: "Frontend Developer",
-      department: "Engineering",
-      location: "Remote",
-      type: "Full-time",
-      experience: "3+ years",
-      description: "We're seeking a talented Frontend Developer to create amazing user experiences for our cloud platform.",
-      requirements: [
-        "3+ years of React/Next.js experience",
-        "Strong knowledge of TypeScript",
-        "Experience with modern CSS frameworks",
-        "Understanding of responsive design",
-        "Knowledge of performance optimization"
-      ],
-      benefits: ["Competitive salary", "Remote work", "Health insurance", "Creative freedom"]
-    },
-    {
-      title: "Product Manager",
-      department: "Product",
-      location: "Remote",
-      type: "Full-time",
-      experience: "4+ years",
-      description: "Lead product strategy and development for our cloud engineering platform.",
-      requirements: [
-        "4+ years of product management experience",
-        "Background in cloud computing or DevOps",
-        "Strong analytical and communication skills",
-        "Experience with agile methodologies",
-        "Ability to work with technical teams"
-      ],
-      benefits: ["Competitive salary", "Remote work", "Health insurance", "Equity options"]
-    }
-  ];
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        setLoading(true);
+        const response = await jobService.getActiveJobs(1, 10);
+        setJobs(response.data.jobs || []);
+        setError(null);
+      } catch (err) {
+        setError('Failed to load job openings. Please try again later.');
+        console.error('Error fetching jobs:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
+  const formatSalary = (salary) => {
+    if (!salary || !salary.isVisible) return 'Competitive';
+    const { min, max, currency } = salary;
+    const formattedMin = (min / 100000).toFixed(1);
+    const formattedMax = (max / 100000).toFixed(1);
+    return `${currency} ${formattedMin}L - ${formattedMax}L`;
+  };
+
+  const formatExperience = (experience) => {
+    if (!experience) return 'Not specified';
+    const { min, max } = experience;
+    if (min === max) return `${min}+ years`;
+    return `${min}-${max} years`;
+  };
+
+  const getLocationString = (location) => {
+    if (!location) return 'Remote';
+    if (location.type === 'Remote') return 'Remote';
+    return `${location.city}, ${location.country}`;
+  };
 
   return (
     <LayoutWrapper>
@@ -126,66 +104,119 @@ export default function CareerPage() {
           <h2 className="text-2xl font-bold text-white mb-8 text-center">
             Open <span className="text-[#00B3C6]">Positions</span>
           </h2>
-          <div className="space-y-6">
-            {openings.map((job, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:transform hover:scale-105 transition-all duration-300">
-                
-                {/* Job Header */}
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{job.title}</h3>
-                    <div className="flex flex-wrap gap-2 text-sm">
-                      <span className="bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full">
-                        {job.department}
-                      </span>
-                      <span className="bg-green-500/20 text-green-400 px-2 py-1 rounded-full">
-                        {job.location}
-                      </span>
-                      <span className="bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full">
-                        {job.type}
-                      </span>
-                      <span className="bg-[#00B3C6]/20 text-[#00B3C6] px-2 py-1 rounded-full">
-                        {job.experience}
-                      </span>
-                    </div>
-                  </div>
-                  <button className="mt-4 md:mt-0 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 px-6 py-2 rounded-lg text-white font-medium transition-all duration-200 transform hover:scale-105">
-                    Apply Now
-                  </button>
-                </div>
-
-                {/* Job Description */}
-                <p className="text-gray-300 mb-4">{job.description}</p>
-
-                {/* Requirements */}
-                <div className="mb-4">
-                  <h4 className="text-lg font-semibold text-white mb-2">Requirements:</h4>
-                  <ul className="space-y-1">
-                    {job.requirements.map((req, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-gray-400">
-                        <svg className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {req}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Benefits */}
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-2">Benefits:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {job.benefits.map((benefit, idx) => (
-                      <span key={idx} className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full">
-                        {benefit}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+          
+          {loading && (
+            <div className="text-center text-white py-8">
+              <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#00B3C6]"></div>
+              <p className="mt-4">Loading job openings...</p>
+            </div>
+          )}
+          
+          {error && (
+            <div className="text-center py-8">
+              <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-4 max-w-md mx-auto">
+                <p className="text-red-400">{error}</p>
+                <button 
+                  onClick={() => window.location.reload()}
+                  className="mt-4 bg-red-500 hover:bg-red-600 px-4 py-2 rounded text-white text-sm"
+                >
+                  Try Again
+                </button>
               </div>
-            ))}
-          </div>
+            </div>
+          )}
+          
+          {!loading && !error && jobs.length === 0 && (
+            <div className="text-center py-8">
+              <p className="text-gray-400">No active job openings at the moment. Please check back later!</p>
+            </div>
+          )}
+          
+          {!loading && !error && jobs.length > 0 && (
+            <div className="space-y-6">
+              {jobs.map((job) => (
+                <div key={job._id} className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 hover:transform hover:scale-105 transition-all duration-300">
+                  
+                  {/* Job Header */}
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-2">{job.title}</h3>
+                      <div className="flex flex-wrap gap-2 text-sm">
+                        <span className="bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full">
+                          {job.department}
+                        </span>
+                        <span className="bg-green-500/20 text-green-400 px-2 py-1 rounded-full">
+                          {getLocationString(job.location)}
+                        </span>
+                        <span className="bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full">
+                          {job.employmentType}
+                        </span>
+                        <span className="bg-[#00B3C6]/20 text-[#00B3C6] px-2 py-1 rounded-full">
+                          {formatExperience(job.experience)}
+                        </span>
+                        {job.salary?.isVisible && (
+                          <span className="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full">
+                            {formatSalary(job.salary)}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <button className="mt-4 md:mt-0 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 px-6 py-2 rounded-lg text-white font-medium transition-all duration-200 transform hover:scale-105">
+                      Apply Now
+                    </button>
+                  </div>
+
+                  {/* Job Description */}
+                  <p className="text-gray-300 mb-4">{job.description}</p>
+
+                  {/* Requirements */}
+                  {job.requirements && job.requirements.length > 0 && (
+                    <div className="mb-4">
+                      <h4 className="text-lg font-semibold text-white mb-2">Requirements:</h4>
+                      <ul className="space-y-1">
+                        {job.requirements.map((req, idx) => (
+                          <li key={idx} className="flex items-center text-sm text-gray-400">
+                            <svg className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                            {req}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Skills */}
+                  {job.skills && job.skills.length > 0 && (
+                    <div className="mb-4">
+                      <h4 className="text-lg font-semibold text-white mb-2">Skills:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {job.skills.map((skill, idx) => (
+                          <span key={idx} className="text-xs bg-orange-500/20 text-orange-400 px-2 py-1 rounded-full">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Benefits */}
+                  {job.benefits && job.benefits.length > 0 && (
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">Benefits:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {job.benefits.map((benefit, idx) => (
+                          <span key={idx} className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full">
+                            {benefit}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* CTA Section */}
