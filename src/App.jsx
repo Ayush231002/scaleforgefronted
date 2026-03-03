@@ -8,6 +8,7 @@ import RegistrationSettings from "./admin/auth/RegistrationSettings";
 import AdminRegistrationWrapper from "./admin/auth/AdminRegistrationWrapper";
 //// Admin Enquiry Management
 import UserEnquiryPage from "./admin/components/consultant/UserEnquiryPage";
+import UserEnquiryDetailPage from "./admin/components/consultant/UserEnquiryDetailPage";
 
 import ContactPage from "./components/contact/contactpage";
 /// admin service and category management
@@ -16,6 +17,7 @@ import AdminAddCategoryPage from "./admin/components/category-management/AdminAd
 import AdminEditCategoryPage from "./admin/components/category-management/AdminEditCategoryPage";
 import AdminEditServicePage from "./admin/components/service-management/AdminEditServicePage";
 import AdminAddServicePage from "./admin/components/service-management/AdminAddServicePage"; 
+import AdminServiceDetailPage from "./admin/components/service-management/AdminServiceDetailPage"; 
 
 
 
@@ -71,11 +73,13 @@ function AppRoutes() {
         <Route path="change-password" element={<ChangePasswordPage />} />
         <Route path="registration-settings" element={<RegistrationSettings />} />
         <Route path="enquiries" element={<UserEnquiryPage />} />
+        <Route path="enquiries/:id" element={<UserEnquiryDetailPage />} />
         <Route path="services" element={<AdminServiceManagementPage />} />
         <Route path="add-category" element={<AdminAddCategoryPage />} />
         <Route path="edit-category/:id" element={<AdminEditCategoryPage />} />
         <Route path="add-service" element={<AdminAddServicePage />} />
         <Route path="edit-service/:id" element={<AdminEditServicePage />} />
+        <Route path="service-detail/:id" element={<AdminServiceDetailPage />} />
       </Route>
 
       {/* 🔁 LEGACY REDIRECTS */}

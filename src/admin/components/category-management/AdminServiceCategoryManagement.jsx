@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiService } from '../../../config';
 import { API_ENDPOINTS } from '../../../config/routes';
+import { Button } from '../../../components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '../../../components/ui/card';
+import { Badge } from '../../../components/ui/badge';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../../components/ui/table';
 
 const AdminServiceCategoryManagement = () => {
   const [categories, setCategories] = useState([]);
@@ -171,32 +175,32 @@ const AdminServiceCategoryManagement = () => {
 
       {/* Categories Table */}
       {!loading && (
-        <div className="bg-gray-800 rounded-lg shadow overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-700">
-              <thead className="bg-gray-700">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+        <Card className="bg-gray-800 border-gray-700">
+          <CardContent className="p-0">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-gray-700">
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                     Name
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  </TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                     Description
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  </TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                     Order
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  </TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                     Status
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  </TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                     Actions
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-gray-800 divide-y divide-gray-700">
+                  </TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
                 {categories.map((category) => (
-                  <tr key={category._id} className="hover:bg-gray-700">
-                    <td className="px-6 py-4 whitespace-nowrap">
+                  <TableRow key={category._id} className="hover:bg-gray-700">
+                    <TableCell className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center space-x-3">
                         {category.imageUrl && (
                           <img
@@ -212,58 +216,60 @@ const AdminServiceCategoryManagement = () => {
                           {category.name}
                         </span>
                       </div>
-                    </td>
-                    <td className="px-6 py-4">
+                    </TableCell>
+                    <TableCell className="px-6 py-4">
                       <span className="text-sm text-gray-300 line-clamp-2">
                         {category.description || 'No description'}
                       </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    </TableCell>
+                    <TableCell className="px-6 py-4 whitespace-nowrap">
                       <span className="text-sm text-gray-300">
                         {category.order || 0}
                       </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                        category.isActive
-                          ? 'bg-green-100 text-green-800'
-                          : 'bg-red-100 text-red-800'
-                      }`}>
+                    </TableCell>
+                    <TableCell className="px-6 py-4 whitespace-nowrap">
+                      <Badge variant={category.isActive ? "default" : "secondary"} className={
+                        category.isActive 
+                          ? "bg-green-100 text-green-800" 
+                          : "bg-red-100 text-red-800"
+                      }>
                         {category.isActive ? 'Active' : 'Inactive'}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                      </Badge>
+                    </TableCell>
+                    <TableCell className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center space-x-2">
-                        <button
+                        <Button
+                          variant="ghost"
+                          size="sm"
                           onClick={() => navigate(`/admin/edit-category/${category._id}`)}
-                          className="text-blue-400 hover:text-blue-300 text-sm font-medium"
+                          className="text-blue-400 hover:text-blue-300"
                         >
                           Edit
-                        </button>
-                        <button
+                        </Button>
+                        <Button
+                          variant={category.isActive ? "destructive" : "default"}
+                          size="sm"
                           onClick={() => toggleCategoryStatus(category._id, category.isActive)}
-                          className={`text-sm font-medium px-3 py-1 rounded ${
-                            category.isActive
-                              ? 'bg-red-600 hover:bg-red-700 text-white'
-                              : 'bg-green-600 hover:bg-green-700 text-white'
-                          }`}
+                          className={category.isActive ? "bg-red-600 hover:bg-red-700" : "bg-green-600 hover:bg-green-700"}
                         >
                           {category.isActive ? 'Deactivate' : 'Activate'}
-                        </button>
-                        <button
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
                           onClick={() => handleDelete(category._id)}
-                          className="text-red-400 hover:text-red-300 text-sm font-medium"
+                          className="text-red-400 hover:text-red-300"
                         >
                           Delete
-                        </button>
+                        </Button>
                       </div>
-                    </td>
-                  </tr>
+                    </TableCell>
+                  </TableRow>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
       )}
 
       {/* Add/Edit Category Modal */}

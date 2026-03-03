@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { adminServiceService } from '../../../services/admin/admin-service.service.js';
 import { adminCategoryService } from '../../../services/admin/admin-category.service.js';
+import { Button } from '../../../components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '../../../components/ui/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../../components/ui/select';
+import { Badge } from '../../../components/ui/badge';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../../components/ui/table';
 
 const AdminServiceManagement = () => {
   const [services, setServices] = useState([]);
@@ -9,6 +14,7 @@ const AdminServiceManagement = () => {
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [editingService, setEditingService] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -22,6 +28,16 @@ const AdminServiceManagement = () => {
     imageUrl: ''
   });
   const navigate = useNavigate();
+
+  // Filter services based on selected category
+  const filteredServices = selectedCategory === 'all' 
+    ? services 
+    : services.filter(service => service.category?._id === selectedCategory || service.category === selectedCategory);
+
+  // Handle category filter change
+  const handleCategoryFilter = (categoryId) => {
+    setSelectedCategory(categoryId);
+  };
 
   // Fetch services and categories
   useEffect(() => {
@@ -181,6 +197,26 @@ const AdminServiceManagement = () => {
         </button>
       </div>
 
+      {/* Category Filter */}
+      <div className="mb-6">
+        <label className="block text-sm font-medium text-gray-300 mb-2">
+          Filter by Category
+        </label>
+        <Select value={selectedCategory} onValueChange={handleCategoryFilter}>
+          <SelectTrigger className="w-full md:w-64 bg-gray-700 border-gray-600 text-white focus:ring-[#00B3C6]">
+            <SelectValue placeholder="Select category" />
+          </SelectTrigger>
+          <SelectContent className="bg-gray-700 border-gray-600">
+            <SelectItem value="all" className="text-white">All Categories</SelectItem>
+            {categories.map((category) => (
+              <SelectItem key={category._id} value={category._id} className="text-white">
+                {category.name}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
       {/* Loading State */}
       {loading && (
         <div className="flex items-center justify-center py-12">
@@ -191,35 +227,35 @@ const AdminServiceManagement = () => {
 
       {/* Services Table */}
       {!loading && (
-        <div className="bg-gray-800 rounded-lg shadow overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-700">
-              <thead className="bg-gray-700">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+        <Card className="bg-gray-800 border-gray-700">
+          <CardContent className="p-0">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-gray-700">
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                     Name
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  </TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                     Category
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  </TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                     Price
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  </TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                     Duration
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  </TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                     Status
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  </TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                     Actions
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-gray-800 divide-y divide-gray-700">
-                {services.map((service) => (
-                  <tr key={service._id} className="hover:bg-gray-700">
-                    <td className="px-6 py-4 whitespace-nowrap">
+                  </TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {filteredServices.map((service) => (
+                  <TableRow key={service._id} className="hover:bg-gray-700">
+                    <TableCell className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center space-x-3">
                         {service.imageUrl && (
                           <img
@@ -235,63 +271,73 @@ const AdminServiceManagement = () => {
                           {service.name}
                         </span>
                       </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    </TableCell>
+                    <TableCell className="px-6 py-4 whitespace-nowrap">
                       <span className="text-sm text-gray-300">
                         {service.category?.name || 'No category'}
                       </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    </TableCell>
+                    <TableCell className="px-6 py-4 whitespace-nowrap">
                       <span className="text-sm text-gray-300">
                         ${service.price ? `$${service.price}` : 'Not set'}
                       </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    </TableCell>
+                    <TableCell className="px-6 py-4 whitespace-nowrap">
                       <span className="text-sm text-gray-300">
                         {service.duration || 'Not set'}
                       </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                        service.isActive
-                          ? 'bg-green-100 text-green-800'
-                          : 'bg-red-100 text-red-800'
-                      }`}>
+                    </TableCell>
+                    <TableCell className="px-6 py-4 whitespace-nowrap">
+                      <Badge variant={service.isActive ? "default" : "secondary"} className={
+                        service.isActive 
+                          ? "bg-green-100 text-green-800" 
+                          : "bg-red-100 text-red-800"
+                      }>
                         {service.isActive ? 'Active' : 'Inactive'}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                      </Badge>
+                    </TableCell>
+                    <TableCell className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center space-x-2">
-                        <button
+                        <Button
+                          variant="ghost"
+                          size="sm"
                           onClick={() => handleEdit(service)}
-                          className="text-blue-400 hover:text-blue-300 text-sm font-medium"
+                          className="text-blue-400 hover:text-blue-300"
                         >
                           Edit
-                        </button>
-                        <button
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => navigate(`/admin/service-detail/${service._id}`)}
+                          className="text-green-400 hover:text-green-300"
+                        >
+                          View Details
+                        </Button>
+                        <Button
+                          variant={service.isActive ? "destructive" : "default"}
+                          size="sm"
                           onClick={() => toggleServiceStatus(service._id, service.isActive)}
-                          className={`text-sm font-medium px-3 py-1 rounded ${
-                            service.isActive
-                              ? 'bg-red-600 hover:bg-red-700 text-white'
-                              : 'bg-green-600 hover:bg-green-700 text-white'
-                          }`}
+                          className={service.isActive ? "bg-red-600 hover:bg-red-700" : "bg-green-600 hover:bg-green-700"}
                         >
                           {service.isActive ? 'Deactivate' : 'Activate'}
-                        </button>
-                        <button
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
                           onClick={() => handleDelete(service._id)}
-                          className="text-red-400 hover:text-red-300 text-sm font-medium"
+                          className="text-red-400 hover:text-red-300"
                         >
                           Delete
-                        </button>
+                        </Button>
                       </div>
-                    </td>
-                  </tr>
+                    </TableCell>
+                  </TableRow>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
       )}
 
       {/* Add/Edit Service Modal */}

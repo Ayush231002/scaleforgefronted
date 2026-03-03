@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { apiService } from '../../../config';
 import { API_ENDPOINTS } from '../../../config/routes';
+import { Button } from '../../../components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '../../../components/ui/card';
+import { Badge } from '../../../components/ui/badge';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../../components/ui/table';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../../components/ui/select';
 
 const UserEnquiryPage = () => {
   const [enquiries, setEnquiries] = useState([]);
@@ -91,12 +96,16 @@ const UserEnquiryPage = () => {
     return counts;
   };
 
-  const getStatusColor = (status) => {
+  const getStatusBadge = (status) => {
     switch(status) {
-      case 'pending': return 'bg-yellow-100 text-yellow-800';
-      case 'inProgress': return 'bg-blue-100 text-blue-800';
-      case 'resolved': return 'bg-green-100 text-green-800';
-      default: return 'bg-gray-100 text-gray-800';
+      case 'pending': 
+        return <Badge variant="secondary" className="bg-yellow-100 text-yellow-800">Pending</Badge>;
+      case 'inProgress': 
+        return <Badge variant="secondary" className="bg-blue-100 text-blue-800">In Progress</Badge>;
+      case 'resolved': 
+        return <Badge variant="default" className="bg-green-100 text-green-800">Resolved</Badge>;
+      default: 
+        return <Badge variant="secondary" className="bg-gray-100 text-gray-800">{status}</Badge>;
     }
   };
 
@@ -147,9 +156,10 @@ const UserEnquiryPage = () => {
   if (error) return <div className="text-red-500 text-center">{error}</div>;
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-[#050b1e] via-[#0b1d3a] to-[#020617]">
+    <div className="min-h-screen w-full bg-gradient-to-br from-[#050b1e] via-[#0b1d3a] to-[#020617]">
       {/* Header */}
-      <div className="bg-gray-900/50 backdrop-blur-lg border-b border-gray-700 p-2 sm:p-4 sticky top-16 z-20">
+      <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-700 mx-4 sticky top-16 z-20">
+        <CardContent className="p-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex items-center gap-2 sm:gap-4">
             <Link 
@@ -223,46 +233,45 @@ const UserEnquiryPage = () => {
             </button>
           </div>
         </div>
-      </div>
+      </CardContent>
+    </Card>
 
       {/* Main Content */}
-      <div className="p-2">
-        <div className="flex-1 p-2">
-          <h1 className="text-xl sm:text-3xl font-bold text-white mb-4 sm:mb-8">User Enquiry Management</h1>
-          
-          <div className="bg-gray-800 rounded-lg overflow-hidden">
-            {/* Desktop/Tablet Table View */}
-            <div className="hidden sm:block overflow-x-auto">
-              <table className="w-full text-white table-auto">
-                <thead className="bg-gray-700">
-                  <tr>
-                    <th className="px-3 py-2 text-left text-xs font-medium">Name</th>
-                    <th className="px-3 py-2 text-left text-xs font-medium">Email</th>
-                    <th className="px-3 py-2 text-left text-xs font-medium">Phone</th>
-                    <th className="px-3 py-2 text-center text-xs font-medium">Booked</th>
-                    <th className="px-3 py-2 text-center text-xs font-medium">Status</th>
-                    <th className="px-3 py-2 text-left text-xs font-medium">Subject</th>
-                    <th className="px-3 py-2 text-left text-xs font-medium">Description</th>
-                    <th className="px-3 py-2 text-center text-xs font-medium">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
+      <div className="w-full flex-1 p-2">
+        <h1 className="text-xl sm:text-3xl font-bold text-white mb-4 sm:mb-8">User Enquiry Management</h1>
+        
+        {/* Desktop Table View */}
+        <div className="hidden sm:block p-4">
+          <Card className="bg-gray-800/50 backdrop-blur-lg border-gray-700">
+            <CardContent className="p-0">
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-gray-700">
+                    <TableHead className="px-3 py-2 text-left text-xs font-medium">Name</TableHead>
+                    <TableHead className="px-3 py-2 text-left text-xs font-medium">Email</TableHead>
+                    <TableHead className="px-3 py-2 text-left text-xs font-medium">Phone</TableHead>
+                    <TableHead className="px-3 py-2 text-center text-xs font-medium">Booked</TableHead>
+                    <TableHead className="px-3 py-2 text-center text-xs font-medium">Status</TableHead>
+                    <TableHead className="px-3 py-2 text-left text-xs font-medium">Subject</TableHead>
+                    <TableHead className="px-3 py-2 text-left text-xs font-medium">Description</TableHead>
+                    <TableHead className="px-3 py-2 text-center text-xs font-medium">Actions</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
                   {getFilteredEnquiries().map(enquiry => (
-                    <tr key={enquiry._id} className="border-b border-gray-700 hover:bg-gray-700/50 align-top">
-                      <td className="px-3 py-2 text-xs">{enquiry.name}</td>
-                      <td className="px-3 py-2 text-xs">{enquiry.email}</td>
-                      <td className="px-3 py-2 text-xs">{enquiry.phoneNumber}</td>
-                      <td className="px-3 py-2 text-center">
+                    <TableRow key={enquiry._id} className="border-b border-gray-700 hover:bg-gray-700/50 align-top">
+                      <TableCell className="px-3 py-2 text-xs text-white">{enquiry.name}</TableCell>
+                      <TableCell className="px-3 py-2 text-xs text-white">{enquiry.email}</TableCell>
+                      <TableCell className="px-3 py-2 text-xs text-white">{enquiry.phoneNumber}</TableCell>
+                      <TableCell className="px-3 py-2 text-center">
                         <span className={`px-1 py-0.5 rounded text-xs ${enquiry.isBooked ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
                           {enquiry.isBooked ? 'Yes' : 'No'}
                         </span>
-                      </td>
-                      <td className="px-3 py-2 text-center">
-                        <span className={`px-1 py-0.5 rounded text-xs ${getStatusColor(enquiry.status)}`}>
-                          {enquiry.status}
-                        </span>
-                      </td>
-                      <td className="px-3 py-2 text-xs max-w-xs">
+                      </TableCell>
+                      <TableCell className="px-3 py-2 text-center">
+                        {getStatusBadge(enquiry.status)}
+                      </TableCell>
+                      <TableCell className="px-3 py-2 text-xs max-w-xs">
                         <div className="min-h-[40px]">
                           <div className="flex flex-col">
                             <p className="whitespace-pre-wrap text-white text-xs leading-tight">
@@ -278,8 +287,8 @@ const UserEnquiryPage = () => {
                             )}
                           </div>
                         </div>
-                      </td>
-                      <td className="px-3 py-2 text-xs max-w-sm">
+                      </TableCell>
+                      <TableCell className="px-3 py-2 text-xs max-w-sm">
                         <div className="min-h-[60px]">
                           <div className="flex flex-col">
                             <p className="whitespace-pre-wrap text-white text-xs leading-tight">
@@ -298,9 +307,14 @@ const UserEnquiryPage = () => {
                             )}
                           </div>
                         </div>
-                      </td>
-                      <td className="px-3 py-2">
-                        <div className="flex flex-col space-y-1 min-h-[60px]">
+                      </TableCell>
+                      <TableCell className="px-3 py-2">
+                        <div className="flex flex-col space-y-1 min-h-[80px]">
+                          <Link to={`/admin/enquiries/${enquiry._id}`}>
+                            <Button variant="outline" size="sm" className="w-full text-xs">
+                              View Details
+                            </Button>
+                          </Link>
                           <select
                             value={enquiry.status}
                             onChange={(e) => updateStatus(enquiry._id, e.target.value)}
@@ -317,15 +331,17 @@ const UserEnquiryPage = () => {
                             Delete
                           </button>
                         </div>
-                      </td>
-                    </tr>
+                      </TableCell>
+                    </TableRow>
                   ))}
-                </tbody>
-              </table>
-            </div>
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+        </div>
 
-            {/* Mobile Card View */}
-            <div className="sm:hidden space-y-4 p-4">
+        {/* Mobile Card View */}
+        <div className="sm:hidden space-y-4 p-4">
               {getFilteredEnquiries().map(enquiry => (
                 <div key={enquiry._id} className="bg-gray-700 rounded-lg p-4 border border-gray-600">
                   {/* Header with name and status */}
@@ -339,9 +355,7 @@ const UserEnquiryPage = () => {
                       <span className={`px-2 py-1 rounded text-xs ${enquiry.isBooked ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
                         {enquiry.isBooked ? 'Booked' : 'General'}
                       </span>
-                      <span className={`px-2 py-1 rounded text-xs ${getStatusColor(enquiry.status)}`}>
-                        {enquiry.status}
-                      </span>
+                      {getStatusBadge(enquiry.status)}
                     </div>
                   </div>
 
@@ -371,27 +385,32 @@ const UserEnquiryPage = () => {
                   </div>
 
                   {/* Actions */}
-                  <div className="flex gap-2">
-                    <select
-                      value={enquiry.status}
-                      onChange={(e) => updateStatus(enquiry._id, e.target.value)}
-                      className="flex-1 bg-gray-600 text-white px-2 py-1 rounded text-xs"
-                    >
-                      <option value="pending">Pending</option>
-                      <option value="inProgress">In Progress</option>
-                      <option value="resolved">Resolved</option>
-                    </select>
-                    <button
-                      onClick={() => deleteEnquiry(enquiry._id)}
-                      className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-xs"
-                    >
-                      Delete
-                    </button>
+                  <div className="flex flex-col gap-2">
+                    <Link to={`/admin/enquiries/${enquiry._id}`}>
+                      <Button variant="outline" size="sm" className="w-full">
+                        View Details
+                      </Button>
+                    </Link>
+                    <div className="flex gap-2">
+                      <select
+                        value={enquiry.status}
+                        onChange={(e) => updateStatus(enquiry._id, e.target.value)}
+                        className="flex-1 bg-gray-600 text-white px-2 py-1 rounded text-xs"
+                      >
+                        <option value="pending">Pending</option>
+                        <option value="inProgress">In Progress</option>
+                        <option value="resolved">Resolved</option>
+                      </select>
+                      <button
+                        onClick={() => deleteEnquiry(enquiry._id)}
+                        className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-xs"
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
         </div>
       </div>
     </div>
