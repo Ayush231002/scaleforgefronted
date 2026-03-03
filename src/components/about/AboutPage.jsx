@@ -109,7 +109,7 @@ export default function AboutPage() {
         <TabsContent value="overview" className="animate-fade-in">
             
             {/* Who We Are Card */}
-            <Card className="bg-gradient-to-br from-blue-500/10 to-purple-600/10 border-white/10 my-2">
+            <Card className="bg-gradient-to-br from-blue-500/10 to-purple-600/10 border-white/10 my-2 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
               <CardHeader className="pb-4">
                 <CardTitle className="text-3xl md:text-4xl text-white">Who We Are</CardTitle>
               </CardHeader>
@@ -124,7 +124,7 @@ export default function AboutPage() {
             </Card>
 
             {/* Enterprise Experience Card */}
-            <Card className="bg-white/5 border-white/10">
+            <Card className="bg-white/5 border-white/10 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
               <CardHeader>
                 <CardTitle className="text-3xl md:text-4xl text-white text-center">Enterprise Experience</CardTitle>
                 <CardDescription className="text-gray-300 text-center text-lg">
@@ -146,7 +146,7 @@ export default function AboutPage() {
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-white text-center">Our Journey</h2>
               {timeline.map((item, index) => (
-                <Card key={index} className="bg-white/5 border-white/10">
+                <Card key={index} className="bg-white/5 border-white/10 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
                   <CardContent className="pt-6">
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <Badge variant="default" className="bg-[#00B3C6] text-white px-4 py-2 rounded-lg font-bold min-w-fit">
@@ -165,12 +165,12 @@ export default function AboutPage() {
 
         {/* Capabilities Tab Content */}
         <TabsContent value="capabilities" className="animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 mt-4">
               Our Core <span className="text-[#00B3C6]">Capabilities</span>
             </h2>
             
             {coreCapabilities.map((capability, index) => (
-              <Card key={index} className="bg-gradient-to-br from-white/5 to-white/10 border-white/10">
+              <Card key={index} className="bg-gradient-to-br from-white/5 to-white/10 border-white/10 space-y-2 mt-5 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 bg-[#00B3C6]/20 rounded-2xl flex items-center justify-center text-[#00B3C6]">
@@ -197,12 +197,12 @@ export default function AboutPage() {
 
             {/* What Makes Us Different */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 mt-6 text-center">
                 What Makes Us <span className="text-[#00B3C6]">Different</span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {differentiators.map((item, index) => (
-                  <Card key={index} className="bg-white/5 border-white/10 hover:bg-white/10 transition-colors">
+                  <Card key={index} className="bg-white/5 border-white/10 hover:bg-white/10 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
                     <CardContent className="pt-6">
                       <div className="flex items-start gap-4">
                         <div className="w-12 h-12 bg-[#00B3C6]/20 rounded-xl flex items-center justify-center text-[#00B3C6] flex-shrink-0">
@@ -222,11 +222,11 @@ export default function AboutPage() {
 
         {/* Approach Tab Content */}
         <TabsContent value="approach" className="animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 mt-4">
               Our <span className="text-[#00B3C6]">Approach</span>
             </h2>
             
-            <Card className="bg-gradient-to-br from-blue-500/10 to-purple-600/10 border-white/10">
+            <Card className="bg-gradient-to-br from-blue-500/10 to-purple-600/10 border-white/10 mt-5">
               <CardHeader>
                 <CardDescription className="text-gray-300 text-center text-xl">
                   We believe IT should be:
@@ -240,7 +240,7 @@ export default function AboutPage() {
                     { title: "Scalable", subtitle: "not location-bound", icon: <Globe className="w-6 h-6" /> },
                     { title: "Business-aligned", subtitle: "not just technology-focused", icon: <Target className="w-6 h-6" /> }
                   ].map((item, index) => (
-                    <Card key={index} className="text-center bg-white/5 border-white/10">
+                    <Card key={index} className="text-center bg-white/5 border-white/10 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
                       <CardContent className="pt-6">
                         <div className="w-16 h-16 bg-[#00B3C6]/20 rounded-2xl flex items-center justify-center text-[#00B3C6] mx-auto mb-4">
                           {item.icon}
@@ -255,8 +255,8 @@ export default function AboutPage() {
             </Card>
 
             {/* Vision & Mission */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="bg-gradient-to-br from-[#00B3C6]/10 to-[#00B3C6]/10 border-[#00B3C6]/20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 mb-4">
+              <Card className="bg-gradient-to-br from-[#00B3C6]/10 to-[#00B3C6]/10 border-[#00B3C6]/20 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
                 <CardHeader>
                   <CardTitle className="text-2xl text-white">Our Vision</CardTitle>
                 </CardHeader>
@@ -266,7 +266,7 @@ export default function AboutPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="bg-gradient-to-br from-blue-500/10 to-blue-600/10 border-blue-500/20">
+              <Card className="bg-gradient-to-br from-blue-500/10 to-blue-600/10 border-blue-500/20 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
                 <CardHeader>
                   <CardTitle className="text-2xl text-white">Our Mission</CardTitle>
                 </CardHeader>
@@ -279,7 +279,7 @@ export default function AboutPage() {
             </div>
 
             {/* Building for Future */}
-            <Card className="bg-white/5 border-white/10">
+            <Card className="bg-white/5 border-white/10 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
               <CardHeader>
                 <CardTitle className="text-2xl text-white">Building for the Future</CardTitle>
               </CardHeader>
@@ -297,35 +297,35 @@ export default function AboutPage() {
               <span className="text-[#00B3C6]">Leadership</span>
             </h2>
             
-            <Card className="bg-gradient-to-br from-white/5 to-white/10 border-white/10">
-              <CardContent className="pt-12 pb-12">
-                <div className="max-w-4xl mx-auto text-center">
-                  <div className="w-32 h-32 bg-[#00B3C6]/20 rounded-2xl flex items-center justify-center text-[#00B3C6] mx-auto mb-8">
-                    <Users className="w-16 h-16" />
+            <Card className="bg-gradient-to-br from-white/5 to-white/10 border-white/10 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
+              <CardContent className="pt-6 pb-6">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-[#00B3C6]/20 rounded-2xl flex items-center justify-center text-[#00B3C6] mx-auto mb-4">
+                    <Users className="w-10 h-10" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-3">
                     Technology-Driven Leadership
                   </h3>
-                  <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4 max-w-lg mx-auto">
                     Elvora Global is driven by a technology professional with 18+ years of experience in IT infrastructure, cloud platforms and DevOps transformation, having worked across startups, enterprises and multi-location business environments.
                   </p>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Card className="bg-white/5 border-white/10">
-                      <CardContent className="pt-6 text-center">
-                        <div className="text-3xl font-bold text-[#00B3C6] mb-2">18+</div>
-                        <div className="text-gray-300">Years Experience</div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <Card className="bg-white/5 border-white/10 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
+                      <CardContent className="pt-3 pb-3 text-center">
+                        <div className="text-xl font-bold text-[#00B3C6] mb-1">18+</div>
+                        <div className="text-gray-300 text-xs">Years Experience</div>
                       </CardContent>
                     </Card>
-                    <Card className="bg-white/5 border-white/10">
-                      <CardContent className="pt-6 text-center">
-                        <div className="text-3xl font-bold text-[#00B3C6] mb-2">IT Infra</div>
-                        <div className="text-gray-300">Expertise</div>
+                    <Card className="bg-white/5 border-white/10 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
+                      <CardContent className="pt-3 pb-3 text-center">
+                        <div className="text-xl font-bold text-[#00B3C6] mb-1">IT Infra</div>
+                        <div className="text-gray-300 text-xs">Expertise</div>
                       </CardContent>
                     </Card>
-                    <Card className="bg-white/5 border-white/10">
-                      <CardContent className="pt-6 text-center">
-                        <div className="text-3xl font-bold text-[#00B3C6] mb-2">DevOps</div>
-                        <div className="text-gray-300">Transformation</div>
+                    <Card className="bg-white/5 border-white/10 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
+                      <CardContent className="pt-3 pb-3 text-center">
+                        <div className="text-xl font-bold text-[#00B3C6] mb-1">DevOps</div>
+                        <div className="text-gray-300 text-xs">Transformation</div>
                       </CardContent>
                     </Card>
                   </div>
@@ -335,7 +335,7 @@ export default function AboutPage() {
         </TabsContent>
 
         {/* CTA Section */}
-        <Card className="mt-16 bg-gradient-to-r from-[#00B3C6]/10 to-[#00B3C6]/10 border-[#00B3C6]/30">
+        <Card className="mt-16 bg-gradient-to-r from-[#00B3C6]/10 to-[#00B3C6]/10 border-[#00B3C6]/30 hover:border-[#00B3C6]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#00B3C6]/10">
           <CardContent className="pt-12 pb-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Ready to Transform Your IT Operations?

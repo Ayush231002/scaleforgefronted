@@ -20,8 +20,10 @@ const CompactServiceCategories = () => {
         const allCategories = response.data || response;
         console.log('All categories:', allCategories);
         
-        // Limit to 8 categories for compact view
-        const activeCategories = allCategories.slice(0, 8);
+        // Filter only active categories and limit to 8 for compact view
+        const activeCategories = allCategories
+          .filter(category => category.isActive === true)
+          .slice(0, 8);
         console.log('Active categories:', activeCategories);
         
         setCategories(activeCategories);

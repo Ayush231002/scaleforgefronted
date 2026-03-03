@@ -19,7 +19,8 @@ export default function ServicesPage() {
         setLoading(true);
         
         // Fetch categories using centralized service
-        const activeCategories = await CategoryService.getAllCategories();
+        const allCategories = await CategoryService.getAllCategories();
+        const activeCategories = allCategories.filter(category => category.isActive === true);
         setCategories(activeCategories);
         
         // Fetch services using centralized service
