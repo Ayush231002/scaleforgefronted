@@ -36,7 +36,7 @@ export default function AboutPage() {
         "Infrastructure as Code",
         "SRE, Monitoring & Observability"
       ],
-      note: "Delivered through our specialized division – Scaleforge Consulting"
+      note: "Delivered through our specialized division – ElvoraGlobal Consulting"
     }
   ];
 
