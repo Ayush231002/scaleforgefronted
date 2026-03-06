@@ -54,7 +54,7 @@ export default function CareerFormPage() {
           <div className="flex justify-between items-center">
 
             <h2 className="text-2xl font-bold text-white">
-              Apply for: {job?.title}
+            {job ? `Apply for: ${job.title}` : "Submit Your Resume"}
             </h2>
 
             <button

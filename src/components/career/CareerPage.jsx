@@ -232,9 +232,12 @@ export default function CareerPage() {
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
             We're always looking for talented people. Send us your resume and we'll keep you in mind for future opportunities.
           </p>
-          <button className="bg-gradient-to-r from-[#00B3C6] to-[#00B3C6] hover:from-blue-600 hover:to-blue-700 px-8 py-3 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105">
-            Send Resume
-          </button>
+          <button
+          onClick={()=>navigate("/career/apply")}
+           className="bg-gradient-to-r from-[#00B3C6] to-blue-600 hover:from-blue-600 hover:to-blue-700 px-8 py-3 rounded-lg font-semibold text-white transition-all duration-200 transform hover:scale-105"
+          >
+          Send Resume
+         </button>
         </div>
       </div>
     </LayoutWrapper>
