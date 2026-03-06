@@ -219,3 +219,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+.input-style{
+  background:#1f2937;
+  border:1px solid rgba(255,255,255,0.1);
+  padding:12px;
+  border-radius:8px;
+  color:white;
+  outline:none;
+  transition:0.2s;
+}
+
+.input-style:focus{
+  border-color:#00B3C6;
+  box-shadow:0 0 0 2px rgba(0,179,198,0.2);
+}

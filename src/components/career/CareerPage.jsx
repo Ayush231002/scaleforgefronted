@@ -1,12 +1,14 @@
 import LayoutWrapper from '../layout/LayoutWrapper';
 import { useState, useEffect } from 'react';
 import { jobService } from '../../services/user/jobService.js';
+import { useNavigate } from "react-router-dom";
 
 export default function CareerPage() {
+  const navigate = useNavigate();
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -161,8 +163,11 @@ export default function CareerPage() {
                         )}
                       </div>
                     </div>
-                    <button className="mt-4 md:mt-0 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 px-6 py-2 rounded-lg text-white font-medium transition-all duration-200 transform hover:scale-105">
-                      Apply Now
+                    <button
+                    onClick={() => navigate("/career/apply", { state: { job } })}
+                    className="mt-4 md:mt-0 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 px-6 py-2 rounded-lg text-white font-medium transition-all duration-200 transform hover:scale-105"
+                    >
+                     Apply Now
                     </button>
                   </div>
 

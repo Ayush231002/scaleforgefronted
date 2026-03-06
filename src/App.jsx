@@ -35,6 +35,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 // Context providers
 import { AdminAuthProvider, useAdminAuth } from "./context/AdminAuthContext";
+import CareerFormPage from "./components/career/CareerFormPage";
 
 function AppRoutes() {
   const { isAuthenticated: isAdminAuthenticated, isLoading: isAdminLoading } = useAdminAuth();
@@ -51,6 +52,7 @@ function AppRoutes() {
       <Route path="/career" element={<CareerPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/career/apply" element={<CareerFormPage />} />
 
       {/*  ADMIN AUTH PAGES (Standalone - No Header) */}
       <Route 
