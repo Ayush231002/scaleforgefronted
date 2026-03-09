@@ -124,32 +124,41 @@ const UserEnquiryPage = () => {
   const formatTextWithLineBreaks = (text, charsPerLine = 20) => {
     if (!text) return '';
     
-    const words = text.split(' ');
-    const lines = [];
-    let currentLine = '';
+    // Preserve natural line breaks and only break very long words
+    const lines = text.split('\n');
+    const formattedLines = [];
     
-    words.forEach(word => {
-      // If adding this word exceeds the line limit
-      if ((currentLine + ' ' + word).length > charsPerLine) {
-        if (currentLine) {
-          lines.push(currentLine);
-          currentLine = word;
-        } else {
-          // Word itself is longer than charsPerLine, break it
-          for (let i = 0; i < word.length; i += charsPerLine) {
-            lines.push(word.substring(i, i + charsPerLine));
-          }
-        }
+    lines.forEach(line => {
+      if (line.length <= charsPerLine) {
+        formattedLines.push(line);
       } else {
-        currentLine = currentLine ? currentLine + ' ' + word : word;
+        // Break very long words but preserve natural breaks
+        const words = line.split(' ');
+        let currentLine = '';
+        
+        words.forEach(word => {
+          if ((currentLine + ' ' + word).length > charsPerLine) {
+            if (currentLine) {
+              formattedLines.push(currentLine);
+              currentLine = word;
+            } else {
+              // Word itself is longer than charsPerLine, break it
+              for (let i = 0; i < word.length; i += charsPerLine) {
+                formattedLines.push(word.substring(i, i + charsPerLine));
+              }
+            }
+          } else {
+            currentLine = currentLine ? currentLine + ' ' + word : word;
+          }
+        });
+        
+        if (currentLine) {
+          formattedLines.push(currentLine);
+        }
       }
     });
     
-    if (currentLine) {
-      lines.push(currentLine);
-    }
-    
-    return lines.join('\n');
+    return formattedLines.join('\n');
   };
 
   if (loading) return <div className="flex justify-center items-center h-screen">Loading...</div>;
