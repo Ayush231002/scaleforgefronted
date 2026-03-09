@@ -5,15 +5,18 @@
 // Import all service classes
 import { CategoryService } from './user/categoryService';
 import { ServiceService } from './user/serviceService';
+import { adminJobService } from './admin/admin-job.service';
 
 // Export all services
 export {
   CategoryService,
-  ServiceService
+  ServiceService,
+  adminJobService
 };
 
 // Default export with all services
 export default {
   CategoryService,
-  ServiceService
+  ServiceService,
+  adminJobService
 };

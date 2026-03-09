@@ -67,8 +67,14 @@ const API_CONFIG = {
     
     // Job endpoints
     JOBS: {
+      GET_ALL: '/job/getAll-jobs',
+      GET_BY_ID: '/job/:id',
+      CREATE: '/job/create-jobs',
+      UPDATE: '/job/update-job/:id',
+      DELETE: '/job/delete-job/:id',
+      TOGGLE_STATUS: '/job/toggle-job-status/:id',
       GET_ACTIVE_JOBS: '/job/get-active-jobs',
-      GET_JOB_BY_ID: '/job/:id',
+      GET_JOBS_BY_STATUS: '/job/jobs-by-status/:status',
     },
     
     // Health check

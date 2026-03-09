@@ -19,6 +19,12 @@ import AdminEditServicePage from "./admin/components/service-management/AdminEdi
 import AdminAddServicePage from "./admin/components/service-management/AdminAddServicePage"; 
 import AdminServiceDetailPage from "./admin/components/service-management/AdminServiceDetailPage"; 
 
+// Job Management
+import AdminJobManagementPage from "./admin/components/job-management/AdminJobManagementPage";
+import CreateJobPage from "./admin/components/job-management/CreateJobPage";
+import EditJobPage from "./admin/components/job-management/EditJobPage";
+import JobDetailsPage from "./admin/components/job-management/JobDetailsPage"; 
+
 
 
 // Common components
@@ -82,6 +88,10 @@ function AppRoutes() {
         <Route path="add-service" element={<AdminAddServicePage />} />
         <Route path="edit-service/:id" element={<AdminEditServicePage />} />
         <Route path="service-detail/:id" element={<AdminServiceDetailPage />} />
+        <Route path="jobs" element={<AdminJobManagementPage />} />
+        <Route path="jobs/create" element={<CreateJobPage />} />
+        <Route path="jobs/edit/:id" element={<EditJobPage />} />
+        <Route path="jobs/:id" element={<JobDetailsPage />} />
       </Route>
 
       {/* 🔁 LEGACY REDIRECTS */}
