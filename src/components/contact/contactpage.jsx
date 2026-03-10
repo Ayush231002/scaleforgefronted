@@ -25,19 +25,19 @@ export default function ContactPage() {
 
           {/* MAIL */}
           <a
-            href="mailto:contact@scaleforge.com"
+            href="mailto:info@elvoragloabal.in"
             className="bg-white/5 backdrop-blur-lg border border-white/10 
                        rounded-2xl p-8 text-center shadow-xl 
                        hover:scale-105 transition cursor-pointer"
           >
             <div className="text-4xl mb-4">📧</div>
             <h3 className="text-lg font-semibold mb-2">Mail Us</h3>
-            <p className="text-gray-300 text-sm">contact@scaleforge.com</p>
+            <p className="text-gray-300 text-sm">info@elvoragloabal.in</p>
           </a>
 
           {/* LOCATION */}
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Noida,+Uttar+Pradesh,+India"
+            href="https://maps.app.goo.gl/tUZR263aqgedr7ULA"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white/5 backdrop-blur-lg border border-white/10 
@@ -47,7 +47,7 @@ export default function ContactPage() {
             <div className="text-4xl mb-4">📍</div>
             <h3 className="text-lg font-semibold mb-2">Location</h3>
             <p className="text-gray-300 text-sm">
-              Noida, Uttar Pradesh, India
+              10th Floor Tower-B, Unitech Cyber Park, Sector-39 Gurugram, Haryana - 122001, India
             </p>
             <p className="text-xs text-[#00B3C6] mt-2">
               View on Google Maps →
@@ -71,7 +71,7 @@ export default function ContactPage() {
           <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl overflow-hidden shadow-xl">
             <iframe
               title="ElvoraGlobal Location"
-              src="https://www.google.com/maps?q=Noida,Uttar+Pradesh,India&output=embed"
+              src="https://www.google.com/maps?q=Unitech+Cyber+Park,Gurugram,India&output=embed"
               width="100%"
               height="400"
               style={{ border: 0 }}

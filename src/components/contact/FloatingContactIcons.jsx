@@ -20,7 +20,7 @@ export default function FloatingContactIcons() {
 
       {/* Mail */}
       <a
-        href="mailto:contact@scaleforge.com"
+        href="mailto:info@elvoragloabal.in"
         title="Mail Us"
         className="w-14 h-14 flex items-center justify-center rounded-full
                    bg-gradient-to-br from-[#00B3C6] to-[#00B3C6]
