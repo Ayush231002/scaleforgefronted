@@ -71,7 +71,7 @@ export default function ContactPage() {
           <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl overflow-hidden shadow-xl">
             <iframe
               title="ElvoraGlobal Location"
-              src="https://www.google.com/maps?q=Unitech+Cyber+Park,Gurugram,India&output=embed"
+              src="https://www.google.com/maps?q=Elvora+Global+Private+Limited+Unitech+Cyber+Park+Sector+39+Gurugram+Haryana+122001&output=embed"
               width="100%"
               height="400"
               style={{ border: 0 }}
