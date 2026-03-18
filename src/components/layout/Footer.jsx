@@ -67,11 +67,23 @@ const Footer = () => {
                 </a>
               </p>
               <p className="text-gray-300">
-                <span className="block font-medium">Phone:</span>
-                <a href="tel:+1246831701" className="text-[#00B3C6] hover:text-[#00B3C6] transition-colors">
-                  +91-124-6831701
-                </a>
-              </p>
+  <span className="block font-medium">Phone:</span>
+
+  <a
+    href="tel:+1246831701"
+    className="block text-[#00B3C6] hover:text-[#00B3C6] transition-colors"
+  >
+    +91-124-6831701
+  </a>
+
+  <a
+    href="tel:+8828400661"
+    className="block text-[#00B3C6] hover:text-[#00B3C6] transition-colors mt-1"
+  >
+    
+    +91-8828400661
+  </a>
+</p>
               <div className="flex space-x-4 pt-4">
                 <a 
                   href="https://twitter.com/scaleforce" 
